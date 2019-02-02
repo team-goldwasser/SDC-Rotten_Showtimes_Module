@@ -23,10 +23,3 @@ sequelize.authenticate()
     console.log('Unable to connect to the database: ', err);
   })
 
-/////////////Seeding Script//////////////////
-const generateTheaters = require('./utils/genTheater.js');
-
-// generateTheaters(20).forEach((theater) => {
-//   Theater.create(theater);
-//   console.log(theater);
-// })
