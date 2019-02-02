@@ -1,10 +1,10 @@
 'use strict';
 
-var genMovie = require('../utils/genMovie')
+var generateMovie = require('../utils/genMovie')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('movies', genMovie(), {});
+    return queryInterface.bulkInsert('movies', generateMovie(), {});
   },
 
   down: (queryInterface, Sequelize) => {

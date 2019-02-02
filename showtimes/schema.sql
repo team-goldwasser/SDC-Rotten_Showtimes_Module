@@ -12,7 +12,11 @@ CREATE TABLE theaters (
 
 CREATE TABLE movies (
   ID SERIAL PRIMARY KEY,
-  title varchar(80) NOT NULL UNIQUE
+  tmdb_id varchar(20) NOT NULL UNIQUE,
+  title varchar(80) NOT NULL UNIQUE,
+  title_url varchar(80),
+  tmdb_poster_path varchar(80),
+  tmdb_backdrop_path varchar(80)
 )
 
 CREATE TABLE showtimes (

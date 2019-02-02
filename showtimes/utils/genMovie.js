@@ -8,12 +8,12 @@
 
 const movies = require('../sample/parsedMovies.js');
 
-const genMovie = () => {
+const generateMovie = () => {
   const results = [];
 
   movies.forEach((movie) => {
     movieTitle = {};
-    movieTitle.id = movie.id;
+    movieTitle.tmdb_id = movie.id;
     movieTitle.title = movie.title;
     movieTitle.title_url = movie.title_url;
     movieTitle.tmdb_poster_path = movie.tmdb_poster_path;
@@ -24,4 +24,4 @@ const genMovie = () => {
   return results;
 };
 
-module.exports = genMovie;
+module.exports = generateMovie;
