@@ -70,3 +70,5 @@ sequelize.authenticate()
   //   theater_id: 3,
   //   movie_id: 1
   // })
+
+  
