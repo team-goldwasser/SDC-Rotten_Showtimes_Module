@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     state: DataTypes.STRING,
     zip: DataTypes.STRING,
     phone: DataTypes.STRING,
-  }, {});
+  }, {timestamps: false});
   Theater.associate = function (models) {
     // associations can be defined here
   };

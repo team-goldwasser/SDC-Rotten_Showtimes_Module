@@ -21,7 +21,7 @@ CREATE TABLE movies (
 
 CREATE TABLE showtimes (
   ID SERIAL PRIMARY KEY,
-  week_day varchar(80),
+  week_day integer,
   start_time varchar(80),
   seat varchar(80),
   theater_id integer REFERENCES theaters(ID),

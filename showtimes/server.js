@@ -1,25 +1,23 @@
-const Sequelize = require('sequelize');
 const express = require('express');
+const { getMovieZipShowtimes } = require('./db.js');
+
 const app = express();
 const port = 9002;
 
 app.listen(port);
 
-const sequelize = new Sequelize({
-  database: 'rottentomatoes',
-  username: 'Chen',
-  password: null,
-  dialect: 'postgres',
-  host: '127.0.0.1',
-  port: 5432,
-  define: { timestamps: false }
-})
+app.get('showtime/:title/:zip', (req, res) => {
+  const { title, zip } = req.params;
 
-sequelize.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.')
-  })
-  .catch(err => {
-    console.log('Unable to connect to the database: ', err);
-  })
+  const defaultTheaterZip = '94107';
 
+  if (zip === 0) {
+    getMovieZipShowtimes(title, defaultTheaterZip, (results) => {
+      res.json(results);
+    });
+  } else {
+    getMovieZipShowtimes(title, defaultTheaterZip, (results) => {
+      res.json(results);
+    });
+  }
+});

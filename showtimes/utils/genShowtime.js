@@ -6,7 +6,7 @@
 //   movie_id: 1
 // }
 
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const days = [0, 1, 2, 3, 4, 5, 6];
 const seat = ['standard', 'recliner'];
 const startTime = ['00', '15', '30', '45'];
 const moviePlayCountPerDay = 6;
