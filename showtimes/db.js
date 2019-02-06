@@ -15,13 +15,14 @@ module.exports.getTheater = (zip, callback) => {
       zip,
     },
   })
+    .catch((err) => { console.log(`get theater in db error: ${err}`); })
     .then((theater) => { callback(theater, theater.id); });
 };
 
 module.exports.getMovieShowtimes = (title, theaterId, callback) => {
   const results = [];
 
-  return Movie.findOne({
+  Movie.findOne({
     where: {
       title,
     },
@@ -43,8 +44,7 @@ module.exports.getMovieShowtimes = (title, theaterId, callback) => {
             });
           });
         })
-        .then(() => {
-          callback(results);
-        });
+        .catch((err) => { console.log(`get showtimes in db error: ${err}`); })
+        .then(() => { callback(results); });
     });
 };
