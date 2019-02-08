@@ -1,6 +1,6 @@
 'use strict';
 
-var generateShowtime = require('../utils/genShowtime')
+var generateShowtime = require('../db/utils/genShowtime')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {

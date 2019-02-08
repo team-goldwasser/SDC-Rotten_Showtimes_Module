@@ -1,6 +1,6 @@
 'use strict';
 
-var generateTheaters = require('../utils/genTheater.js')
+var generateTheaters = require('../db/utils/genTheater.js')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {

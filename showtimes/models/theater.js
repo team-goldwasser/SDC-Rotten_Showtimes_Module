@@ -4,9 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
-    zip: DataTypes.STRING,
+    zip: DataTypes.BIGINT,
     phone: DataTypes.STRING,
-  }, {timestamps: false});
+  }, { timestamps: false });
   Theater.associate = function (models) {
     // associations can be defined here
   };

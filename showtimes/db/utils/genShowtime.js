@@ -16,7 +16,7 @@ const open = 9;
 const close = 23;
 
 // db id
-const theaterIds = [224, 225, 226];
+const theaterIds = [1, 2, 3, 4, 5];
 const movieIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const generateShowtime = () => {

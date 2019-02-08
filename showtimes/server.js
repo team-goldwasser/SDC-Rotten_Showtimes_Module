@@ -1,5 +1,5 @@
 const express = require('express');
-const { getTheater, getMovieShowtimes } = require('./db.js');
+const { getTheater, getMovieShowtimes } = require('./db/db.js');
 
 const app = express();
 const port = 9002;
@@ -8,9 +8,9 @@ app.listen(port);
 
 app.get('showtime/:title/:zip', (req, res) => {
   const { title } = req.params;
-  const defaultTheaterZip = '94107';
+  const defaultTheaterZip = 94107;
 
-  const zip = req.params.zip === 0 ? defaultTheaterZip : req.params.zip.toString();
+  const zip = req.params.zip === 0 ? defaultTheaterZip : req.params.zip;
 
   const data = {
     movie_title: title,
@@ -39,7 +39,8 @@ const data = {
   showtimes: [],
 };
 
-getTheater('94107', (t, id) => {
+// test
+getTheater(95000, (t, id) => {
   data.theater_id = id;
   data.theater_name = t.name;
   data.address = t.address;

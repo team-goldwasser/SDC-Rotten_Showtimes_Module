@@ -1,22 +1,25 @@
-const db = require('./models/index.js').sequelize;
+const db = require('../models/index.js').sequelize;
 
 const { Sequelize } = db;
 
-const Movie = require('./models/movie.js')(db, Sequelize);
-const Showtime = require('./models/showtime.js')(db, Sequelize);
-const Theater = require('./models/theater.js')(db, Sequelize);
+const Movie = require('../models/movie.js')(db, Sequelize);
+const Showtime = require('../models/showtime.js')(db, Sequelize);
+const Theater = require('../models/theater.js')(db, Sequelize);
 
 Movie.hasMany(Showtime, { foreignKey: 'movie_id', sourceKey: 'id' });
 Theater.hasMany(Showtime, { foreignKey: 'theater_id', sourceKey: 'id' });
 
+// get the closest theater
+// current definition of 'closest': Math.abs(theaterZip - inputZip)
+// reference of sequelize.fn('abs') https://github.com/sequelize/sequelize/issues/2657
+// can improve this query by adding a GMap API call in the future
 module.exports.getTheater = (zip, callback) => {
-  Theater.findOne({
-    where: {
-      zip,
-    },
+  Theater.findAll({
+    limit: 1,
+    order: [[db.fn('abs', db.condition(db.col('zip'), '-', zip)), 'ASC']],
   })
     .catch((err) => { console.log(`get theater in db error: ${err}`); })
-    .then((theater) => { callback(theater, theater.id); });
+    .then((theaters) => { callback(theaters[0], theaters[0].id); });
 };
 
 module.exports.getMovieShowtimes = (title, theaterId, callback) => {

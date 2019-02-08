@@ -6,7 +6,7 @@ CREATE TABLE theaters (
   address varchar(80),
   city varchar(80),
   state varchar(20),
-  zip varchar(20),
+  zip bigint,
   phone varchar(20)
 )
 
