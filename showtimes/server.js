@@ -1,9 +1,11 @@
 const express = require('express');
+
 const { getTheater, getMovieShowtimes } = require('./db/db.js');
 
 const app = express();
 const port = 9002;
 
+app.use(express.static('dist'));
 app.listen(port);
 
 app.get('showtime/:title/:zip', (req, res) => {
@@ -33,24 +35,23 @@ app.get('showtime/:title/:zip', (req, res) => {
   });
 });
 
-const data = {
-  movie_title: 'The Avengers',
-  week_day: new Date().getDay(),
-  showtimes: [],
-};
+// // test
+// const data = {
+//   movie_title: 'The Avengers',
+//   week_day: new Date().getDay(),
+//   showtimes: [],
+// };
 
-// test
-getTheater(95000, (t, id) => {
-  data.theater_id = id;
-  data.theater_name = t.name;
-  data.address = t.address;
-  data.city = t.city;
-  data.state = t.state;
-  data.zip = t.zip;
-  data.phone = t.phone;
-  getMovieShowtimes('The Avengers', 225, (results) => {
-    data.showtimes = results;
-    console.log(results);
-    console.log(data);
-  });
-});
+// getTheater(95000, (t, id) => {
+//   data.theater_id = id;
+//   data.theater_name = t.name;
+//   data.address = t.address;
+//   data.city = t.city;
+//   data.state = t.state;
+//   data.zip = t.zip;
+//   data.phone = t.phone;
+//   getMovieShowtimes('The Avengers', id, (results) => {
+//     data.showtimes = results;
+//     console.log(data);
+//   });
+// });

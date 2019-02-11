@@ -7,7 +7,7 @@
 // }
 
 const days = [0, 1, 2, 3, 4, 5, 6];
-const seat = ['standard', 'recliner'];
+const seat = ['standard', 'recliner', '3D'];
 const startTime = ['00', '15', '30', '45'];
 const moviePlayCountPerDay = 6;
 
