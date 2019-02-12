@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='theater'>
   {{theater.theater_name}}&nbsp<span>{{theater.address}} | MAP | {{theater.phone}}</span>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style>
-div {
+.theater {
   padding:10px 0 5px
 }
 </style>

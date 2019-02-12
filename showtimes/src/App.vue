@@ -1,9 +1,9 @@
 <template>
   <section>
   <h2 class="p-3 mb-2 bg-danger text-black">TICKETS & SHOWTIMES</h2>
-  <location></location>
+  <location v-bind:zip="zip"></location>
   <theater v-bind:theater="theater"></theater>
-  <showtime></showtime>
+  <showtime v-bind:showtimes="showtimes"></showtime>
   </section>
 </template>
 
@@ -16,17 +16,18 @@ import getInfo from '../helpers/getInfo.js'
 export default {
   components: {
     Location,
-    Theater
+    Theater,
+    Showtime
   },
   mounted() {
-    console.log(this.$el.textContent)
-    getInfo('The%20Avengers', 94105, (response) => {
+    getInfo('The%20Avengers', this.zip, (response) => {
       this.theater = response;
       this.showtimes = response.showtimes;
     })
   },
   data() {
     return {
+      zip: 94107,
       theater: {
         theater_name: null
       },
