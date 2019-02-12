@@ -9,15 +9,15 @@
 const days = [0, 1, 2, 3, 4, 5, 6];
 const seat = ['standard', 'recliner', '3D'];
 const startTime = ['00', '15', '30', '45'];
-const moviePlayCountPerDay = 6;
+const moviePlayCountPerDay = 8;
 
 // theater operating hours
-const open = 9;
-const close = 23;
+const open = 10;
+const close = 22;
 
 // db id
 const theaterIds = [1, 2, 3, 4, 5];
-const movieIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const movieIds = [1, 2, 3, 4, 5];
 
 const generateShowtime = () => {
   const results = [];

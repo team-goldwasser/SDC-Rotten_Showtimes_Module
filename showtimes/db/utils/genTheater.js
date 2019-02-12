@@ -12,6 +12,7 @@ const zipMax = 94102;
 const zipMin = 94164;
 const stateAbbr = 'CA';
 const nameLength = 15;
+const theaterPrefix = ['AMC ', 'Century ', ''];
 const addressLength = 20;
 const cityLength = 12;
 
@@ -34,7 +35,7 @@ const generateTheaters = (count) => {
 
   while (count > 0) {
     const theater = {};
-    theater.name = generateText(nameLength);
+    theater.name = theaterPrefix[Math.floor(Math.random() * theaterPrefix.length)].concat(generateText(nameLength));
     theater.address = `${Math.floor(Math.random() * 999).toString()} ${generateText(addressLength)}`;
     theater.city = generateText(cityLength);
     theater.state = stateAbbr;

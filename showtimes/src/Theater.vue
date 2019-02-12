@@ -1,6 +1,8 @@
 <template>
   <div class='theater'>
-  {{theater.theater_name}}&nbsp<span>{{theater.address}} | MAP | {{theater.phone}}</span>
+  <strong>{{theater.theater_name.toUpperCase()}}</strong>
+  <div class="float-right">{{theater.address}} | <a href="#">MAP</a> | <a href="#">{{theater.phone}}</a></div>
+  <br>
   </div>
 </template>
 
@@ -9,9 +11,3 @@ export default {
   props: ['theater']
 }
 </script>
-
-<style>
-.theater {
-  padding:10px 0 5px
-}
-</style>

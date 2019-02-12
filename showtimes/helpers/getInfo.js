@@ -23,7 +23,7 @@ const getInfo = (title, zip, callback) => {
           { id: 2993, start_time: '11:45', seat: 'recliner' },
           { id: 2994, start_time: '10:15', seat: 'recliner' },
         ],
-        theater_id: 5,
+        theater_id: 2,
         theater_name: 'Disaster Movie Theater',
         address: '666 6th St.',
         city: 'San Francisco',

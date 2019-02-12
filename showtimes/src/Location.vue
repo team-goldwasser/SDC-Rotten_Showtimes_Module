@@ -1,7 +1,7 @@
 <template>
-  <div class='location'>
+  <div class="border-bottom border-secondary">
     Showtimes for <strong>today</strong> near <strong>{{zip}}</strong>
-    <a>Change Location</a>
+    <a href="#">Change Location</a>
   </div>
 </template>
 
@@ -10,10 +10,3 @@ export default {
   props: ['zip']
 }
 </script>
-
-<style>
-.location {
-  padding: 0 0 10px;
-  border-bottom: 1px solid #EEE
-}
-</style>
