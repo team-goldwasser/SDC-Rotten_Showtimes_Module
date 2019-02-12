@@ -8,11 +8,8 @@ const port = 9002;
 app.use(express.static('dist'));
 app.listen(port);
 
-app.get('showtime/:title/:zip', (req, res) => {
-  const { title } = req.params;
-  const defaultTheaterZip = 94107;
-
-  const zip = req.params.zip === 0 ? defaultTheaterZip : req.params.zip;
+app.get('/showtime/:title/:zip', (req, res) => {
+  const title = req.params.title.split('%20').join(' ');
 
   const data = {
     movie_title: title,
@@ -20,7 +17,7 @@ app.get('showtime/:title/:zip', (req, res) => {
     showtimes: [],
   };
 
-  getTheater(zip, (theater, theaterId) => {
+  getTheater(req.params.zip, (theater, theaterId) => {
     data.theater_id = theaterId;
     data.theater_name = theater.name;
     data.address = theater.address;
