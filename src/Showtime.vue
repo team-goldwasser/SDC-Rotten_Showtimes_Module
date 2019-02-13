@@ -8,8 +8,8 @@
     </b-modal>
   </div>
   <br>
-  <div v-for="showtime in showtimes" :key="showtime.id" class="btn-group" role="group">
-    <button type="button" class="btn btn-warning mr-2" v-bind:disabled="isExpired(showtime.start_time)">{{showtime.start_time}}</button>
+  <div v-for="formattedShowTime in formattedShowTimes" :key="formattedShowTime.id" class="btn-group" role="group">
+    <button type="button" class="btn btn-warning mr-2" v-bind:disabled="isExpired(formattedShowTime.start_time)">{{formattedShowTime.formattedStartTime}}</button>
   </div>
 </div>
 </template>
@@ -21,20 +21,29 @@ export default {
     activeClass: "btn btn-warning mr-2",
     expiredClass: "btn btn-secondary"
   },
+  computed: {
+    formattedShowTimes() {
+      return this.showtimes.map(showtime => {
+        const splitStartTime = showtime.start_time.split(':')
+        const hour = splitStartTime[0];
+        const minute = splitStartTime[1];
+        if (hour === 12) {
+          showtime.formattedStartTime = hour + ':' + minute + 'p';
+        } else if (hour < 12) {
+          showtime.formattedStartTime = hour + ':' + minute + 'a';
+        } else {
+          showtime.formattedStartTime = (parseInt(hour)-12).toString() + ':' + minute + 'p';
+        }
+        return showtime;
+      })
+    }
+  },
   methods: {
-    isExpired: function(startTime) {
-      const ampm = startTime.split(' ')[1];
-      let hour = parseInt(startTime.split(' ')[0].split(':')[0]);
-      const minute = parseInt(startTime.split(' ')[0].split(':')[1]);
-      if (ampm === 'pm' && hour !== 12) {
-        hour += 12;
-      }
-      const formattedStartTime = new Date().setHours(hour,minute,0);
-      if (formattedStartTime > new Date()) {
-        return false
-      } else {
-        return true
-      }
+    isExpired(startTime) {
+      const splitStartTime = startTime.split(':')
+      const hour = splitStartTime[0];
+      const minute = splitStartTime[1];
+      return new Date().setHours(hour,minute,0) > new Date() ? false : true;
     }
   }
 }

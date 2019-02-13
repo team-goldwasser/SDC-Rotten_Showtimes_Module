@@ -9,7 +9,7 @@
 const days = [0, 1, 2, 3, 4, 5, 6];
 const seat = ['standard', 'recliner', '3D'];
 const startTime = ['00', '15', '30', '45'];
-const moviePlayCountPerDay = 8;
+const moviePlayCountPerDay = 6;
 
 // theater operating hours
 const open = 10;
@@ -28,14 +28,7 @@ const generateShowtime = () => {
         let count = moviePlayCountPerDay;
         while (count > 0) {
           const showtime = {};
-          const startHour = Math.floor(Math.random() * (close - open) + open);
-          if (startHour === 12) {
-            showtime.start_time = `${startHour.toString()}:${startTime[Math.floor(Math.random() * startTime.length)]} pm`;
-          } else if (startHour < 12) {
-            showtime.start_time = `${startHour.toString()}:${startTime[Math.floor(Math.random() * startTime.length)]} am`;
-          } else {
-            showtime.start_time = `${(startHour - 12).toString()}:${startTime[Math.floor(Math.random() * startTime.length)]} pm`;
-          }
+          showtime.start_time = `${Math.floor(Math.random() * (close - open) + open)}:${startTime[Math.floor(Math.random() * startTime.length)]}`;
           showtime.week_day = day;
           showtime.seat = seat[Math.floor(Math.random() * seat.length)];
           showtime.theater_id = theaterId;

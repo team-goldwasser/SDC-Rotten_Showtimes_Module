@@ -26,7 +26,7 @@ app.get('/showtime/:title/:zip', (req, res) => {
     data.zip = theater.zip;
     data.phone = theater.phone;
     getMovieShowtimes(title, theaterId, (results) => {
-      data.showtimes = results;
+      data.showtimes = results.sort((showtime1, showtime2) => parseInt(showtime1.start_time.split(':').join(''), 10) - parseInt(showtime2.start_time.split(':').join(''), 10));
       res.json(data);
     });
   });
