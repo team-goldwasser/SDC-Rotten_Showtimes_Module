@@ -28,8 +28,15 @@ const generateShowtime = () => {
         let count = moviePlayCountPerDay;
         while (count > 0) {
           const showtime = {};
+          const startHour = Math.floor(Math.random() * (close - open) + open);
+          if (startHour === 12) {
+            showtime.start_time = `${startHour.toString()}:${startTime[Math.floor(Math.random() * startTime.length)]} pm`;
+          } else if (startHour < 12) {
+            showtime.start_time = `${startHour.toString()}:${startTime[Math.floor(Math.random() * startTime.length)]} am`;
+          } else {
+            showtime.start_time = `${(startHour - 12).toString()}:${startTime[Math.floor(Math.random() * startTime.length)]} pm`;
+          }
           showtime.week_day = day;
-          showtime.start_time = `${Math.floor(Math.random() * (close - open) + open).toString()}:${startTime[Math.floor(Math.random() * startTime.length)]}`;
           showtime.seat = seat[Math.floor(Math.random() * seat.length)];
           showtime.theater_id = theaterId;
           showtime.movie_id = movieId;
