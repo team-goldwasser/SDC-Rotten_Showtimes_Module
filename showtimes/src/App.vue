@@ -3,8 +3,8 @@
   <h2 class="bg-danger text-black">TICKETS & SHOWTIMES</h2>
   <location v-bind:zip="zip"></location>
   <theater v-bind:theater="theater"></theater>
-  <three-d-showtime v-bind:showtimes="threeDShowtimes" v-bind:vocabs='vocabs' v-if="threeDShowtimes.length !== 0"></three-d-showtime>
-  <standard-showtime v-bind:showtimes="standardShowtimes" v-bind:vocabs='vocabs'></standard-showtime>
+  <showtime v-bind:title="threeDTitle" v-bind:showtimes="threeDShowtimes" v-bind:vocabs='vocabs' v-if="threeDShowtimes.length !== 0"></showtime>
+  <showtime v-bind:title="standardTitle" v-bind:showtimes="standardShowtimes" v-bind:vocabs='vocabs'></showtime>
   <div><a href='#' class="float-right">View All Theaters & Showtimes</a></div>
   </section>
 </template>
@@ -12,16 +12,14 @@
 <script>
 import Location from './Location.vue'
 import Theater from './Theater.vue'
-import standardShowtime from './standardShowtime.vue'
-import threeDShowtime from './threeDShowtime.vue'
+import Showtime from './Showtime.vue'
 import getInfo from '../helpers/getInfo.js'
 
 export default {
   components: {
     Location,
     Theater,
-    standardShowtime,
-    threeDShowtime
+    Showtime
   },
   mounted() {
     getInfo('The%20Avengers', this.zip, (response) => {
@@ -40,6 +38,8 @@ export default {
       theater: {
         theater_name: null
       },
+      threeDTitle: 'DIGITAL 3D SHOWTIMES',
+      standardTitle: 'STANDARD SHOWTIMES',
       standardShowtimes: [],
       threeDShowtimes: [],
       vocabs: {

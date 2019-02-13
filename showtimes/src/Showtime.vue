@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div>STANDARD SHOWTIMES</div>
+  <div>{{title}}</div>
   <div v-for="(value, key) in vocabs" :key="value">
     <span class="inline"><a href="#" v-b-modal="'standard' + key">{{key}}</a> | <span>
     <b-modal :id="'standard' + key" title="Rotten Tomatoes says:">
@@ -15,6 +15,6 @@
 
 <script type='text/javascript'>
 export default {
-  props: ['showtimes', 'vocabs']
+  props: ['title','showtimes', 'vocabs']
 }
 </script>
