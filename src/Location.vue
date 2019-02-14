@@ -8,7 +8,7 @@
       <a href='#' v-on:click.stop='triggerChange'>Go back</a>
       <div>Enter your location to see showtimes near you.</div>
       <input type='text' placeholder='Enter Zip Code' v-model="zipcode">
-      <button v-on:click="$emit('updateZip', zipcode)">Save</button>
+      <button v-on:click="$emit('updateZip', zipcode); triggerChange()" >Save</button>
     </div>
   </div>
 </template>

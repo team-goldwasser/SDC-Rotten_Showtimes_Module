@@ -21,14 +21,14 @@ export default {
     formattedShowTimes() {
       return this.showtimes.map(showtime => {
         const splitStartTime = showtime.start_time.split(':')
-        const hour = splitStartTime[0];
+        const hour = parseInt(splitStartTime[0]);
         const minute = splitStartTime[1];
         if (hour === 12) {
           showtime.formattedStartTime = hour + ':' + minute + 'p';
         } else if (hour < 12) {
           showtime.formattedStartTime = hour + ':' + minute + 'a';
         } else {
-          showtime.formattedStartTime = (parseInt(hour)-12).toString() + ':' + minute + 'p';
+          showtime.formattedStartTime = (hour-12).toString() + ':' + minute + 'p';
         }
         return showtime;
       })
