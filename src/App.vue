@@ -1,7 +1,7 @@
 <template>
   <section class='mx-4 my-2'>
   <h2 class="bg-danger text-black">TICKETS & SHOWTIMES</h2>
-  <location v-bind:zip="zip"></location>
+  <location v-bind:zip="zip" v-on:updateZip="loadInfo"></location>
   <theater v-bind:theater="theater"></theater>
   <showtime v-bind:title="threeDTitle" v-bind:showtimes="threeDShowtimes" v-bind:vocabs='Object.assign({}, threeDVocabs, vocabs)' v-if="threeDShowtimes.length !== 0"></showtime>
   <showtime v-bind:title="standardTitle" v-bind:showtimes="standardShowtimes" v-bind:vocabs='vocabs'></showtime>
@@ -22,21 +22,14 @@ export default {
     Showtime
   },
   mounted() {
-    getInfo('Inception', this.zip, (response) => {
-      this.theater = response;
-      this.standardShowtimes = response.showtimes.filter((showtime) => {
-        return showtime.seat !== '3D'
-      });
-      this.threeDShowtimes = response.showtimes.filter((showtime) => {
-        return showtime.seat === '3D'
-      });
-    })
+    this.loadInfo(this.zip);
   },
   data() {
     return {
       zip: 94112,
+      title: 'Inception',
       theater: {
-        theater_name: null
+        theater_name: ''
       },
       threeDTitle: 'DIGITAL 3D SHOWTIMES',
       standardTitle: 'STANDARD SHOWTIMES',
@@ -53,8 +46,19 @@ export default {
       }
     }
   },
-  computed: {
-
+  methods:{
+    loadInfo(zip) {
+      getInfo(this.title, zip, (response) => {
+        this.zip = zip;
+        this.theater = response;
+        this.standardShowtimes = response.showtimes.filter((showtime) => {
+          return showtime.seat !== '3D'
+        });
+        this.threeDShowtimes = response.showtimes.filter((showtime) => {
+          return showtime.seat === '3D'
+        });
+      })
+    }
   }
 };
 

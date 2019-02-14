@@ -9,7 +9,7 @@
   </div>
   <br>
   <div v-for="formattedShowTime in formattedShowTimes" :key="formattedShowTime.id" class="btn-group" role="group">
-    <button type="button" class="btn btn-warning mr-2" v-bind:disabled="isExpired(formattedShowTime.start_time)">{{formattedShowTime.formattedStartTime}}</button>
+    <button type="button" class="btn btn-warning mr-2" v-bind:disabled="isExpired(formattedShowTime.start_time)"><strong>{{formattedShowTime.formattedStartTime}}</strong></button>
   </div>
 </div>
 </template>
@@ -17,10 +17,6 @@
 <script type='text/javascript'>
 export default {
   props: ['title','showtimes', 'vocabs'],
-  data: {
-    activeClass: "btn btn-warning mr-2",
-    expiredClass: "btn btn-secondary"
-  },
   computed: {
     formattedShowTimes() {
       return this.showtimes.map(showtime => {
