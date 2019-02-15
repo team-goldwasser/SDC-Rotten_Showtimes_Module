@@ -1,7 +1,7 @@
 <template>
   <div class='theater'>
   <strong>{{theater.theater_name.toUpperCase()}}</strong>
-  <div class="float-right">{{theater.address}} | <a href="#">MAP</a> | <a href="#">{{theater.phone}}</a></div>
+  <div class="float-right">{{theater.address}} | <a href="#" v-on:click.prevent>MAP</a> | <a href="#" v-on:click.prevent>{{theater.phone}}</a></div>
   <br>
   </div>
 </template>

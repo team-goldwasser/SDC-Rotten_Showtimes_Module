@@ -5,11 +5,11 @@
   <theater v-bind:theater="theater"></theater>
   <showtime v-bind:title="threeDTitle" v-bind:showtimes="threeDShowtimes" v-bind:vocabs='Object.assign({}, threeDVocabs, vocabs)' v-if="threeDShowtimes.length !== 0"></showtime>
   <showtime v-bind:title="standardTitle" v-bind:showtimes="standardShowtimes" v-bind:vocabs='vocabs'></showtime>
-  <div><a href='#' class="float-right">View All Theaters & Showtimes</a></div>
+  <div><a href='#' v-on:click.prevent class="float-right">View All Theaters & Showtimes</a></div>
   </section>
 </template>
 
-<script>
+<script type='text/javascript'>
 import Location from './Location.vue'
 import Theater from './Theater.vue'
 import Showtime from './Showtime.vue'
