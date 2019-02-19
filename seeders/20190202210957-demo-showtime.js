@@ -1,13 +1,9 @@
-'use strict';
 
-var generateShowtime = require('../db/utils/genShowtime')
+
+let generateShowtime = require('../db/utils/genShowtime.js');
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('showtimes', generateShowtime(), {});
-  },
+  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('showtimes', generateShowtime(), {}),
 
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('showtimes', null, {});
-  }
+  down: (queryInterface, Sequelize) => queryInterface.bulkDelete('showtimes', null, {}),
 };

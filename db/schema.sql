@@ -11,12 +11,11 @@ CREATE TABLE theaters (
 )
 
 CREATE TABLE movies (
-  ID SERIAL PRIMARY KEY,
-  tmdb_id varchar(20) NOT NULL UNIQUE,
-  title varchar(80) NOT NULL UNIQUE,
-  title_url varchar(80),
-  tmdb_poster_path varchar(80),
-  tmdb_backdrop_path varchar(80)
+  id bigint NOT NULL UNIQUE PRIMARY KEY,
+  title varchar(255) NOT NULL UNIQUE,
+  title_url varchar(255),
+  tmdb_poster_path varchar(255),
+  tmdb_backdrop_path varchar(255)
 )
 
 CREATE TABLE showtimes (
@@ -24,6 +23,6 @@ CREATE TABLE showtimes (
   week_day integer,
   start_time varchar(80),
   seat varchar(80),
-  theater_id integer REFERENCES theaters(ID),
-  movie_id integer REFERENCES movies(ID)
+  theater_id integer REFERENCES theaters (ID),
+  movie_id bigint REFERENCES movies (id)
 )

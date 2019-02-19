@@ -1,13 +1,9 @@
-'use strict';
 
-var generateMovie = require('../utils/genMovie')
+
+const generateMovie = require('../db/utils/genMovie.js');
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('movies', generateMovie(), {});
-  },
+  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('movies', generateMovie(), {}),
 
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('movies', null, {});
-  }
+  down: (queryInterface, Sequelize) => queryInterface.bulkDelete('movies', null, {}),
 };
