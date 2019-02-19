@@ -13,7 +13,7 @@ const getInfo = (title, zip, callback) => {
     .fail(() => {
       console.log('failed to get theater & showtime info');
       const defaultData = {
-        movie_title: 'Disaster Movie',
+        movie_title_url: 'disaster_movie',
         week_day: new Date().getDay(),
         showtimes: [
           { id: 2989, start_time: '11:45', seat: 'recliner' },

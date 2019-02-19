@@ -22,12 +22,12 @@ module.exports.getTheater = (zip, callback) => {
     .then((theaters) => { callback(theaters[0]); });
 };
 
-module.exports.getMovieShowtimes = (title, theaterId, callback) => {
+module.exports.getMovieShowtimes = (titleUrl, theaterId, callback) => {
   const results = [];
 
   Movie.findOne({
     where: {
-      title,
+      title_url: titleUrl,
     },
   })
     .then((movie) => {

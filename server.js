@@ -8,11 +8,11 @@ const port = 9002;
 app.use(express.static('dist'));
 app.listen(port);
 
-app.get('/showtime/:title/:zip', (req, res) => {
-  const title = req.params.title.split('%20').join(' ');
+app.get('/showtime/:title_url/:zip', (req, res) => {
+  const titleUrl = req.params.title_url;
 
   const data = {
-    movie_title: title,
+    movie_title_url: titleUrl,
     week_day: new Date().getDay(),
     showtimes: [],
   };
@@ -25,7 +25,7 @@ app.get('/showtime/:title/:zip', (req, res) => {
     data.state = theater.state;
     data.zip = theater.zip;
     data.phone = theater.phone;
-    getMovieShowtimes(title, theater.id, (results) => {
+    getMovieShowtimes(titleUrl, theater.id, (results) => {
       data.showtimes = results.sort((showtime1, showtime2) => parseInt(showtime1.start_time.split(':').join(''), 10) - parseInt(showtime2.start_time.split(':').join(''), 10));
       res.json(data);
     });
@@ -34,7 +34,7 @@ app.get('/showtime/:title/:zip', (req, res) => {
 
 // // test
 // const data = {
-//   movie_title: 'The Avengers',
+//   movie_title_url: 'the_avengers',
 //   week_day: new Date().getDay(),
 //   showtimes: [],
 // };
@@ -47,7 +47,7 @@ app.get('/showtime/:title/:zip', (req, res) => {
 //   data.state = t.state;
 //   data.zip = t.zip;
 //   data.phone = t.phone;
-//   getMovieShowtimes('The Avengers', t.id, (results) => {
+//   getMovieShowtimes('the_avengers', t.id, (results) => {
 //     data.showtimes = results;
 //     console.log(data);
 //   });

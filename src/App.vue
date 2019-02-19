@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       zip: 94112,
-      title: 'Inception',
+      title_url: 'inception',
       theater: {
         theater_name: ''
       },
@@ -48,7 +48,7 @@ export default {
   },
   methods:{
     loadInfo(zip) {
-      getInfo(this.title, zip, (response) => {
+      getInfo(this.title_url, zip, (response) => {
         this.zip = zip;
         this.theater = response;
         this.standardShowtimes = response.showtimes.filter((showtime) => {
