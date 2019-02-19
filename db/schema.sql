@@ -18,6 +18,7 @@ CREATE TABLE movies (
   tmdb_backdrop_path varchar(255)
 )
 
+CREATE TYPE seat AS ENUM ('standard', 'recliner', '3D');
 CREATE TABLE showtimes (
   ID SERIAL PRIMARY KEY,
   week_day integer,
