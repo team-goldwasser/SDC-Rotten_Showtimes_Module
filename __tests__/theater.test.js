@@ -17,7 +17,7 @@ const wrapper = mount(Theater, {
   },
 });
 
-it('renders the correct markup', () => {
+it('renders the correct class', () => {
   expect(wrapper.classes('theater')).toBe(true);
 });
 
