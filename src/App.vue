@@ -28,9 +28,7 @@ export default {
     return {
       zip: 94112,
       title_url: 'inception',
-      theater: {
-        theater_name: ''
-      },
+      theater: {},
       threeDTitle: 'DIGITAL 3D SHOWTIMES',
       standardTitle: 'STANDARD SHOWTIMES',
       standardShowtimes: [],
