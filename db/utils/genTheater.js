@@ -27,8 +27,8 @@ const generateText = (length) => {
 const generateZip = () => Math.floor(Math.random() * (zipMax - zipMin) + zipMin).toString();
 
 const generatePhone = () => {
-  const three = Math.floor(Math.random() * (999 - 100) + 100);
-  const four = Math.floor(Math.random() * (9999 - 1000) + 1000);
+  const three = Math.floor(Math.random() * (999 - 100 + 1) + 100);
+  const four = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
   return `(${three.toString()}) ${three.toString()}-${four.toString()}`;
 };
 
