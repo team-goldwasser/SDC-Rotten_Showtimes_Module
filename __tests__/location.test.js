@@ -2,8 +2,6 @@ import { mount } from '@vue/test-utils';
 import sinon from 'sinon';
 import Location from '../src/Location.vue';
 
-// const textInput = wrapper.find('input[type="text"]');
-// textInput.setValue('some value');
 const defaultZip = 94112;
 
 const wrapper = mount(Location, {

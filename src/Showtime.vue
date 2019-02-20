@@ -2,7 +2,7 @@
 <div>
   <div>{{title}}</div>
   <div v-for="(value, key) in vocabs" :key="value" class="float-left mr-2">
-    <a href="#" v-on:click.prevent v-b-modal="title + key" class="mr-2">{{key}}</a>|
+    <a href="#" v-on:click.prevent v-b-modal="title + key" class="modalLink mr-2">{{key}}</a>|
     <b-modal :id="title + key" title="Rotten Tomatoes says:">
       <p class="my-4">{{value}}</p>
     </b-modal>
