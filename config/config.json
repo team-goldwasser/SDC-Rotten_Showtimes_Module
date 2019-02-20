@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "Chen",
+    "password": null,
+    "database": "rottentomatoes",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "Chen",
+    "password": null,
+    "database": "rottentomatoes",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "Chen",
+    "password": null,
+    "database": "rottentomatoes",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
