@@ -1,7 +1,14 @@
 <template>
-  <div class='theater'>
-  <strong>{{theater.theater_name }}</strong>
-  <div class="float-right">{{theater.address}} | <a href="#" v-on:click.prevent>MAP</a> | <a href="#" v-on:click.prevent>{{theater.phone}}</a></div>
+  <div>
+  <div class='theater'><strong>{{theater.theater_name }}</strong>
+  <span class="theater-info">
+    <ul>
+      <li>{{theater.address}} | </li>
+      <li><a href="#" v-on:click.prevent class="link">MAP</a> | </li>
+      <li><a href="#" v-on:click.prevent class="link">{{theater.phone}}</a></li>
+      </ul>
+    </span>
+  </div>
   <br>
   </div>
 </template>
@@ -17,8 +24,3 @@ export default {
 }
 </script>
 
-<style>
-strong {
-  text-transform: uppercase
-}
-</style>

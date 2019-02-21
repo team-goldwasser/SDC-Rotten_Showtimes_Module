@@ -1,0 +1,117 @@
+@media (min-width: 991px) {
+  section {
+    color: #343434;
+    font-family: 'Franklin Gothic FS Book',sans-serif;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    width: 770px;
+    position: relative;
+    float: left;
+    min-height: 1px;
+    font-size: 16px;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    line-height: 1.1;
+    padding-right:5px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    min-height: 15px;
+  }
+
+  li {
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: .5em;
+    margin-right: 3px;
+  }
+
+  .link {
+    color: #2466d4;
+    line-height: 1.25;
+    padding-right: 4px;
+  }
+
+  .link:hover {
+    color: #53bbf1;
+    text-decoration: none;
+  }
+
+  .panel-heading {
+    color: #1C1C1C;
+    background-color: #FA320A;
+    min-width: 20px;
+    height: 20px;
+    float: initial;
+    padding: 10px 25px 10px 28px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    position: relative;
+    font-family: 'Neusa Next Pro Compact',Impact,Arial,sans-serif;
+    border-bottom: 1px solid transparent;
+  }
+
+  .defaultLocation {
+    padding: 0 0 10px;
+    border-bottom: 1px solid #EEE;
+  }
+
+  .theater {
+    padding:10px 0 5px;
+    text-transform: uppercase;
+  }
+
+  .theater-info {
+    float: right;
+    text-transform: none;
+    margin: 0 0 10px;
+  }
+
+  .show-category {
+    font-size: 14px;
+    color: #787878;
+    display: inline;
+  }
+
+  .btn-group {
+    padding-top: 5px;
+  }
+
+  .showtime-btn {
+    color: #343434;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 5px;
+    background-color: #FFE400;
+    border-radius: 5px;
+    border-color: #fff;
+    line-height: 1.42857143;
+    margin-right: 4px;
+    min-width: 86px;
+    padding: 6px 12px;
+    text-align: center;
+  }
+
+  .showtime-btn:hover {
+    background-color: #FFC000
+  }
+
+  .showtime-btn:disabled {
+    color: #7C7B7B;
+    background-color: #D3D3D3;
+    border-color: #D3D3D3;
+    cursor: default;
+  }
+}

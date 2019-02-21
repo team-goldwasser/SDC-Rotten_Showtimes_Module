@@ -1,5 +1,3 @@
-
-
 let generateShowtime = require('../db/utils/genShowtime.js');
 
 module.exports = {

@@ -34,6 +34,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
+    "chai": "^4.2.0",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "eslint": "^5.13.0",
@@ -67,12 +68,19 @@
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js,vue}",
-      "!**/node_modules/**"
+      "**/*.{js,vue}"
     ],
     "coverageReporters": [
       "html",
       "text-summary"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/db/sample/",
+      "<rootDir>/dist/",
+      "<rootDir>/migrations/",
+      "<rootDir>/models/",
+      "<rootDir>/seeders/"
     ]
   }
 }

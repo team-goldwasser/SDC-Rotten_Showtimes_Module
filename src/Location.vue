@@ -1,8 +1,8 @@
 <template>
-  <div class="location border-bottom border-secondary">
+  <div class="location">
     <div class="defaultLocation" v-if="!isChanging">
     Showtimes for <strong>today</strong> near <strong>{{zip}}</strong>
-    <a href="#" v-on:click.prevent='triggerChange'>Change Location</a>
+    <a href="#" v-on:click.prevent='triggerChange' class="link">Change Location</a>
     </div>
     <div class="changeLocation" v-if="isChanging" >
       <a href='#' v-on:click.prevent='triggerChange'>Go back</a>
