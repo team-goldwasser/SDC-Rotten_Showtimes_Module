@@ -1,6 +1,9 @@
-import { mount } from '@vue/test-utils';
-import sinon from 'sinon';
+import { shallowMount } from '@vue/test-utils';
+import Vue from 'vue';
+import BootstrapVue from 'bootstrap-vue';
 import Showtime from '../src/Showtime.vue';
+
+Vue.use(BootstrapVue);
 
 const mockTitle = 'TEST SHOWTIMES';
 
@@ -11,15 +14,15 @@ const mockVocabs = {
 };
 
 const mockShowtimes = [
-  { id: 2989, start_time: '11:45', seat: 'recliner' },
-  { id: 2990, start_time: '13:15', seat: 'standard' },
-  { id: 2991, start_time: '16:45', seat: 'recliner' },
-  { id: 2992, start_time: '19:45', seat: 'standard' },
-  { id: 2993, start_time: '21:30', seat: 'recliner' },
-  { id: 2994, start_time: '22:15', seat: 'recliner' },
+  { id: 2989, start_time: '1:45', seat: 'recliner' },
+  { id: 2990, start_time: '3:15', seat: 'standard' },
+  { id: 2991, start_time: '5:45', seat: 'recliner' },
+  { id: 2992, start_time: '22:45', seat: 'standard' },
+  { id: 2993, start_time: '23:30', seat: 'recliner' },
+  { id: 2994, start_time: '23:55', seat: 'recliner' },
 ];
 
-const wrapper = mount(Showtime, {
+const wrapper = shallowMount(Showtime, {
   propsData: {
     title: mockTitle,
     vocabs: mockVocabs,
@@ -38,16 +41,16 @@ it('should render correct number of showtime buttons', () => {
 });
 
 it('should render formatted showtimes', () => {
-  expect(wrapper.html()).toContain('<strong>11:45a</strong>');
-  expect(wrapper.html()).toContain('<strong>1:15p</strong>');
-  expect(wrapper.html()).toContain('<strong>4:45p</strong>');
-  expect(wrapper.html()).toContain('<strong>7:45p</strong>');
-  expect(wrapper.html()).toContain('<strong>9:30p</strong>');
-  expect(wrapper.html()).toContain('<strong>10:15p</strong>');
+  expect(wrapper.html()).toContain('<strong>1:45a</strong>');
+  expect(wrapper.html()).toContain('<strong>3:15a</strong>');
+  expect(wrapper.html()).toContain('<strong>5:45a</strong>');
+  expect(wrapper.html()).toContain('<strong>10:45p</strong>');
+  expect(wrapper.html()).toContain('<strong>11:30p</strong>');
+  expect(wrapper.html()).toContain('<strong>11:55p</strong>');
 });
 
 // current time: 1:20pm
-// it('should disable showtime buttons depend on current time', () => {
-//   const disabledButtons = wrapper.findAll("[disabled='disabled']");
-//   expect(disabledButtons.length).toBe(2);
-// });
+it('should disable showtime buttons depend on current time', () => {
+  const disabledButtons = wrapper.findAll("[disabled='disabled']");
+  expect(disabledButtons.length).toBe(3);
+});

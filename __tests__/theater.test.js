@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import Theater from '../src/Theater.vue';
 
 const mockTheater = {
@@ -11,7 +11,8 @@ const mockTheater = {
   phone: '(415) 666-6666',
 };
 
-const wrapper = mount(Theater, {
+
+const wrapper = shallowMount(Theater, {
   propsData: {
     theater: mockTheater,
   },

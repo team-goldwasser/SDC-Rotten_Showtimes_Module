@@ -3,7 +3,7 @@
   <h2 class="bg-danger text-black">TICKETS & SHOWTIMES</h2>
   <location v-bind:zip="zip" v-on:updateZip="loadInfo"></location>
   <theater v-bind:theater="theater"></theater>
-  <showtime v-bind:title="threeDTitle" v-bind:showtimes="threeDShowtimes" v-bind:vocabs='Object.assign({}, threeDVocabs, vocabs)' v-if="threeDShowtimes.length !== 0"></showtime>
+  <showtime id='three' v-bind:title="threeDTitle" v-bind:showtimes="threeDShowtimes" v-bind:vocabs='Object.assign({}, threeDVocabs, vocabs)' v-if="threeDShowtimes.length !== 0"></showtime>
   <showtime v-bind:title="standardTitle" v-bind:showtimes="standardShowtimes" v-bind:vocabs='vocabs'></showtime>
   <div><a href='#' v-on:click.prevent class="float-right">View All Theaters & Showtimes</a></div>
   </section>

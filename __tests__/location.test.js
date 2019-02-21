@@ -1,10 +1,10 @@
-import { mount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import sinon from 'sinon';
 import Location from '../src/Location.vue';
 
 const defaultZip = 94112;
 
-const wrapper = mount(Location, {
+const wrapper = shallowMount(Location, {
   propsData: {
     zip: defaultZip,
   },
