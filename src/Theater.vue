@@ -1,15 +1,15 @@
 <template>
   <div>
-  <div class='theater'><strong>{{theater.theater_name }}</strong>
-  <span class="theater-info">
-    <ul>
-      <li>{{theater.address}} | </li>
-      <li><a href="#" v-on:click.prevent class="link">MAP</a> | </li>
-      <li><a href="#" v-on:click.prevent class="link">{{theater.phone}}</a></li>
-      </ul>
-    </span>
-  </div>
-  <br>
+  <div class='theater'>
+    <strong>{{theater.theater_name }}</strong>
+    <span class="theater-info">
+      <ul>
+        <li>{{theater.address}} | </li>
+        <li><a href="#" v-on:click.prevent class="link">MAP</a> | </li>
+        <li><a href="#" v-on:click.prevent class="link">{{theater.phone}}</a></li>
+        </ul>
+      </span>
+    </div><br>
   </div>
 </template>
 

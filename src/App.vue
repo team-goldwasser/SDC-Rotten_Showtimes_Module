@@ -1,11 +1,13 @@
 <template>
-  <section class='mx-4 my-2'>
+  <section>
   <h2 class="panel-heading">TICKETS & SHOWTIMES</h2>
+  <div class="main-body">
   <location v-bind:zip="zip" v-on:updateZip="loadInfo"></location>
   <theater v-bind:theater="theater"></theater>
   <showtime id='three' v-bind:title="threeDTitle" v-bind:showtimes="threeDShowtimes" v-bind:vocabs='Object.assign({}, threeDVocabs, vocabs)' v-if="threeDShowtimes.length !== 0"></showtime><br>
   <showtime v-bind:title="standardTitle" v-bind:showtimes="standardShowtimes" v-bind:vocabs='vocabs'></showtime>
-  <div><a href='#' v-on:click.prevent class="float-right link">View All Theaters & Showtimes</a></div>
+  <div><a href='#' class="view-all link" v-on:click.prevent>View All Theaters & Showtimes</a></div>
+  </div>
   </section>
 </template>
 
