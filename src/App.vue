@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       zip: 94112,
-      title_url: 'the_avengers',
+      title_url: 'black_panther',
       theater: {},
       threeDTitle: 'DIGITAL 3D SHOWTIMES',
       standardTitle: 'STANDARD SHOWTIMES',

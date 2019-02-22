@@ -1,12 +1,9 @@
 const express = require('express');
-
-const { getTheater, getMovieShowtimes } = require('./db/db.js');
+const path = require('path');
+const { getTheater, getMovieShowtimes } = require('../db/db.js');
 
 const app = express();
-const port = 9002;
-
-app.use(express.static('dist'));
-app.listen(port);
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;
@@ -52,3 +49,5 @@ app.get('/showtime/:title_url/:zip', (req, res) => {
 //     console.log(data);
 //   });
 // });
+
+module.exports = app;
