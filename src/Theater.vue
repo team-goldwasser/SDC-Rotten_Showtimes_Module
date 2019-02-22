@@ -3,10 +3,10 @@
   <div class='theater'>
     <strong>{{theater.theater_name }}</strong>
     <span class="theater-info">
-      <ul>
-        <li>{{theater.address}} | </li>
-        <li><a href="#" v-on:click.prevent class="link">MAP</a> | </li>
-        <li><a href="#" v-on:click.prevent class="link">{{theater.phone}}</a></li>
+      <ul class="showtime-list-group">
+        <li class="showtime-list-item">{{theater.address}} | </li>
+        <li class="showtime-list-item"><a href="#" v-on:click.prevent class="link">MAP</a> | </li>
+        <li class="showtime-list-item"><a href="#" v-on:click.prevent class="link">{{theater.phone}}</a></li>
         </ul>
       </span>
     </div><br>
