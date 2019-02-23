@@ -3,7 +3,7 @@
   <div class="show-category">{{title}}
     <ul class="showtime-list-group">
       <li class="showtime-list-item" v-for="(value, key) in vocabs" :key="value">
-        <a href="#" class="link" v-on:click.prevent v-b-modal="title + key">{{key}}</a>|
+        <a href="#" class="showtime-link" v-on:click.prevent v-b-modal="title + key">{{key}}</a>|
         <b-modal :id="title + key" title="Rotten Tomatoes says:">
           <p>{{value}}</p>
         </b-modal>

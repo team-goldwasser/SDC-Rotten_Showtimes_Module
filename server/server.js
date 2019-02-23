@@ -1,7 +1,7 @@
 const app = require('./app.js');
 
-const port = 9002;
+const PORT = 9002 || process.env.PORT;
 
-app.listen(port, () => {
-  console.log(`showtime service is listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`showtime service is listening on port ${PORT}`);
 });
