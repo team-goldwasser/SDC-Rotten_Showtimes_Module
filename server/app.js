@@ -17,6 +17,7 @@ app.use((req, res, next) => {
   next();
 });
 
+// sample url "some-address/showtime/:title_url/:zip"
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;
 

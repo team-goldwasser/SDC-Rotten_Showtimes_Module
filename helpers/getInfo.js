@@ -1,8 +1,10 @@
 import $ from 'jquery';
 
-const getInfo = (title, zip, callback) => {
+const getInfo = (zip, callback) => {
+  const titleUrl = window.location.pathname.split('/m/')[1].replace('/', '');
+  console.log(titleUrl);
   $.ajax({
-    url: `/showtime/${title}/${zip}`,
+    url: `/showtime/${titleUrl}/${zip}`,
     type: 'GET',
     contentType: 'application/json',
   })

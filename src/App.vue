@@ -25,6 +25,13 @@ export default {
   },
   mounted() {
     this.loadInfo(this.zip);
+    // let title_url = window.location.pathname.split('/m/')[1]
+    // console.log(title_url)
+    // if (title_url) {
+    //   this.loadInfo(title_url, this.zip);
+    // } else {
+    //   this.loadInfo(this.title_url, this.zip);
+    // }
   },
   data() {
     return {
@@ -49,9 +56,10 @@ export default {
   },
   methods:{
     loadInfo(zip) {
-      getInfo(this.title_url, zip, (response) => {
+      getInfo(zip, (response) => {
         this.zip = zip;
         this.theater = response;
+        this.title_url = response.movie_title_url;
         this.standardShowtimes = response.showtimes.filter((showtime) => {
           return showtime.seat !== '3D'
         });
