@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+
 const { getTheater, getMovieShowtimes } = require('../db/db.js');
 
 const app = express();

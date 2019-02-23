@@ -1,7 +1,7 @@
 <template>
   <div>
   <div class='theater'>
-    <strong>{{theater.theater_name }}</strong>
+    <strong>{{ theater.theater_name }}</strong>
     <span class="theater-info">
       <ul class="showtime-list-group">
         <li class="showtime-list-item">{{theater.address}} | </li>

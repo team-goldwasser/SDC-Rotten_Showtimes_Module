@@ -32,6 +32,7 @@ export default {
       title_url: 'black_panther',
       theater: {},
       threeDTitle: 'DIGITAL 3D SHOWTIMES',
+
       standardTitle: 'STANDARD SHOWTIMES',
       standardShowtimes: [],
       threeDShowtimes: [],
