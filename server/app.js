@@ -4,7 +4,18 @@ const path = require('path');
 const { getTheater, getMovieShowtimes } = require('../db/db.js');
 
 const app = express();
+// const options = {
+//   setHeaders: (res) => {
+//     res.set('access-control-allow-origin', '*');
+//   },
+// };
 app.use(express.static(path.join(__dirname, '../dist')));
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;
@@ -29,26 +40,5 @@ app.get('/showtime/:title_url/:zip', (req, res) => {
     });
   });
 });
-
-// // test
-// const data = {
-//   movie_title_url: 'the_avengers',
-//   week_day: new Date().getDay(),
-//   showtimes: [],
-// };
-
-// getTheater(95000, (t) => {
-//   data.theater_id = t.id;
-//   data.theater_name = t.name;
-//   data.address = t.address;
-//   data.city = t.city;
-//   data.state = t.state;
-//   data.zip = t.zip;
-//   data.phone = t.phone;
-//   getMovieShowtimes('the_avengers', t.id, (results) => {
-//     data.showtimes = results;
-//     console.log(data);
-//   });
-// });
 
 module.exports = app;
