@@ -4,12 +4,8 @@ const path = require('path');
 const { getTheater, getMovieShowtimes } = require('../db/db.js');
 
 const app = express();
-// const options = {
-//   setHeaders: (res) => {
-//     res.set('access-control-allow-origin', '*');
-//   },
-// };
-app.use(express.static(path.join(__dirname, '../dist')));
+
+app.use('/m/:title_url', express.static(path.join(__dirname, '../dist')));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -17,9 +13,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// sample url "some-address/showtime/:title_url/:zip"
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;
+  console.log(titleUrl);
 
   const data = {
     movie_title_url: titleUrl,

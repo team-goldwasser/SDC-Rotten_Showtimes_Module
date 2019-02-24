@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 const getInfo = (zip, callback) => {
+  // sample url: "some-host/m/black_panther"
   const titleUrl = window.location.pathname.split('/m/')[1].replace('/', '');
   console.log(titleUrl);
   $.ajax({

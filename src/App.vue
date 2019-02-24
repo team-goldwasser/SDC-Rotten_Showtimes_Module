@@ -25,13 +25,6 @@ export default {
   },
   mounted() {
     this.loadInfo(this.zip);
-    // let title_url = window.location.pathname.split('/m/')[1]
-    // console.log(title_url)
-    // if (title_url) {
-    //   this.loadInfo(title_url, this.zip);
-    // } else {
-    //   this.loadInfo(this.title_url, this.zip);
-    // }
   },
   data() {
     return {
