@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     start_time: DataTypes.STRING,
     seat: DataTypes.STRING,
     theater_id: DataTypes.INTEGER,
-    movie_id: DataTypes.INTEGER
-  }, {timestamps: false});
+    movie_id: DataTypes.BIGINT
+  }, {});
   showtime.associate = function(models) {
     // associations can be defined here
   };

@@ -7,6 +7,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 Vue.use(BootstrapVue);
 
 new Vue({
-  el: '#app',
+  el: '#showtime',
   render: h => h(App),
 });

@@ -17,7 +17,11 @@ const close = 22;
 
 // db id
 const theaterIds = [1, 2, 3, 4, 5];
-const movieIds = [1, 2, 3, 4, 5];
+// hand-picked 5 movies' id:
+// Black Panther, The Avengers, Inception, Star Wars: The Last Jedi, Incredibles 2
+const movieIds = [284054, 24428, 27205, 181808, 260513];
+
+const randomIndex = array => Math.floor(Math.random() * array.length);
 
 const generateShowtime = () => {
   const results = [];
@@ -28,9 +32,9 @@ const generateShowtime = () => {
         let count = moviePlayCountPerDay;
         while (count > 0) {
           const showtime = {};
-          showtime.start_time = `${Math.floor(Math.random() * (close - open) + open)}:${startTime[Math.floor(Math.random() * startTime.length)]}`;
+          showtime.start_time = `${Math.floor(Math.random() * (close - open) + open)}:${startTime[randomIndex(seat)]}`;
           showtime.week_day = day;
-          showtime.seat = seat[Math.floor(Math.random() * seat.length)];
+          showtime.seat = seat[randomIndex(seat)];
           showtime.theater_id = theaterId;
           showtime.movie_id = movieId;
           results.push(showtime);

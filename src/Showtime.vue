@@ -1,15 +1,17 @@
 <template>
 <div>
-  <div>{{title}}</div>
-  <div v-for="(value, key) in vocabs" :key="value" class="float-left mr-2">
-    <a href="#" v-on:click.prevent v-b-modal="title + key" class="mr-2">{{key}}</a>|
-    <b-modal :id="title + key" title="Rotten Tomatoes says:">
-      <p class="my-4">{{value}}</p>
-    </b-modal>
+  <div class="show-category">{{title}}
+    <ul class="showtime-list-group">
+      <li class="showtime-list-item" v-for="(value, key) in vocabs" :key="value">
+        <a href="#" class="showtime-link" v-on:click.prevent v-b-modal="title + key">{{key}}</a>|
+        <b-modal :id="title + key" title="Rotten Tomatoes says:">
+          <p>{{value}}</p>
+        </b-modal>
+      </li>
+    </ul>
   </div>
-  <br>
-  <div v-for="formattedShowTime in formattedShowTimes" :key="formattedShowTime.id" class="btn-group" role="group">
-    <button type="button" class="btn btn-warning mr-2" v-bind:disabled="isExpired(formattedShowTime.start_time)"><strong>{{formattedShowTime.formattedStartTime}}</strong></button>
+  <div class="btn-group" role="group" v-for="formattedShowTime in formattedShowTimes" :key="formattedShowTime.id">
+    <button type="button" class="showtime-btn" v-bind:disabled="isExpired(formattedShowTime.start_time)"><strong>{{formattedShowTime.formattedStartTime}}</strong></button>
   </div>
 </div>
 </template>

@@ -12,8 +12,8 @@ const generateMovie = () => {
   const results = [];
 
   movies.forEach((movie) => {
-    movieTitle = {};
-    movieTitle.tmdb_id = movie.id;
+    const movieTitle = {};
+    movieTitle.id = movie.id;
     movieTitle.title = movie.title;
     movieTitle.title_url = movie.title_url;
     movieTitle.tmdb_poster_path = movie.tmdb_poster_path;
