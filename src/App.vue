@@ -1,11 +1,13 @@
 <template>
-  <section class='mx-4 my-2'>
-  <h2 class="bg-danger text-black">TICKETS & SHOWTIMES</h2>
+  <section>
+  <h2 class="panel-heading">TICKETS & SHOWTIMES</h2>
+  <div class="main-body">
   <location v-bind:zip="zip" v-on:updateZip="loadInfo"></location>
   <theater v-bind:theater="theater"></theater>
-  <showtime v-bind:title="threeDTitle" v-bind:showtimes="threeDShowtimes" v-bind:vocabs='Object.assign({}, threeDVocabs, vocabs)' v-if="threeDShowtimes.length !== 0"></showtime>
+  <showtime id='three' v-bind:title="threeDTitle" v-bind:showtimes="threeDShowtimes" v-bind:vocabs='Object.assign({}, threeDVocabs, vocabs)' v-if="threeDShowtimes.length !== 0"></showtime><br>
   <showtime v-bind:title="standardTitle" v-bind:showtimes="standardShowtimes" v-bind:vocabs='vocabs'></showtime>
-  <div><a href='#' v-on:click.prevent class="float-right">View All Theaters & Showtimes</a></div>
+  <div><a href='#' class="view-all link" v-on:click.prevent>View All Theaters & Showtimes</a></div>
+  </div>
   </section>
 </template>
 
@@ -27,11 +29,10 @@ export default {
   data() {
     return {
       zip: 94112,
-      title: 'Inception',
-      theater: {
-        theater_name: ''
-      },
+      title_url: 'black_panther',
+      theater: {},
       threeDTitle: 'DIGITAL 3D SHOWTIMES',
+
       standardTitle: 'STANDARD SHOWTIMES',
       standardShowtimes: [],
       threeDShowtimes: [],
@@ -48,9 +49,10 @@ export default {
   },
   methods:{
     loadInfo(zip) {
-      getInfo(this.title, zip, (response) => {
+      getInfo(zip, (response) => {
         this.zip = zip;
         this.theater = response;
+        this.title_url = response.movie_title_url;
         this.standardShowtimes = response.showtimes.filter((showtime) => {
           return showtime.seat !== '3D'
         });

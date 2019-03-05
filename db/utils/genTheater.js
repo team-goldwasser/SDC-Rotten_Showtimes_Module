@@ -16,6 +16,8 @@ const theaterPrefix = ['AMC ', 'Century ', ''];
 const addressLength = 20;
 const cityLength = 12;
 
+const randomIndex = array => Math.floor(Math.random() * array.length);
+
 const generateText = (length) => {
   const start = Math.floor(Math.random() * (ipsum.length - length));
   const text = ipsum.slice(start, start + length).trim();
@@ -25,8 +27,8 @@ const generateText = (length) => {
 const generateZip = () => Math.floor(Math.random() * (zipMax - zipMin) + zipMin).toString();
 
 const generatePhone = () => {
-  const three = Math.floor(Math.random() * (999 - 100) + 100);
-  const four = Math.floor(Math.random() * (9999 - 1000) + 1000);
+  const three = Math.floor(Math.random() * (999 - 100 + 1) + 100);
+  const four = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
   return `(${three.toString()}) ${three.toString()}-${four.toString()}`;
 };
 
@@ -35,7 +37,7 @@ const generateTheaters = (count) => {
 
   while (count > 0) {
     const theater = {};
-    theater.name = theaterPrefix[Math.floor(Math.random() * theaterPrefix.length)].concat(generateText(nameLength));
+    theater.name = theaterPrefix[randomIndex(theaterPrefix)].concat(generateText(nameLength));
     theater.address = `${Math.floor(Math.random() * 999).toString()} ${generateText(addressLength)}`;
     theater.city = generateText(cityLength);
     theater.state = stateAbbr;

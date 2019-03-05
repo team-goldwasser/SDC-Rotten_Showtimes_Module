@@ -1,27 +1,22 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('showtimes', {
+    return queryInterface.createTable('movies', {
       id: {
-        allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT
       },
-      week_day: {
+      title: {
         type: Sequelize.STRING
       },
-      start_time: {
+      title_url: {
         type: Sequelize.STRING
       },
-      class: {
+      tmdb_poster_path: {
         type: Sequelize.STRING
       },
-      theater_id: {
-        type: Sequelize.INTEGER
-      },
-      movie_id: {
-        type: Sequelize.INTEGER
+      tmdb_backdrop_path: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -34,6 +29,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('showtimes');
+    return queryInterface.dropTable('movies');
   }
 };

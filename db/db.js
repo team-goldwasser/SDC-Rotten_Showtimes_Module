@@ -19,15 +19,15 @@ module.exports.getTheater = (zip, callback) => {
     order: [[db.fn('abs', db.condition(db.col('zip'), '-', zip)), 'ASC']],
   })
     .catch((err) => { console.log(`get theater in db error: ${err}`); })
-    .then((theaters) => { callback(theaters[0], theaters[0].id); });
+    .then((theaters) => { callback(theaters[0]); });
 };
 
-module.exports.getMovieShowtimes = (title, theaterId, callback) => {
+module.exports.getMovieShowtimes = (titleUrl, theaterId, callback) => {
   const results = [];
 
   Movie.findOne({
     where: {
-      title,
+      title_url: titleUrl,
     },
   })
     .then((movie) => {
