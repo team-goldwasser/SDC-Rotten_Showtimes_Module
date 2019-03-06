@@ -5,8 +5,7 @@ const getInfo = (zip, callback) => {
   const titleUrl = window.location.pathname.split('/m/')[1].replace('/', '');
   console.log(titleUrl);
   $.ajax({
-    url: `My service is semi-up now. Not connected to the DB yet. Continuing… :awesome:
-    http://ec2-54-67-109-163.us-west-1.compute.amazonaws.com:9002/showtime/${titleUrl}/${zip}`,
+    url: `http://ec2-54-67-109-163.us-west-1.compute.amazonaws.com:9002/showtime/${titleUrl}/${zip}`,
     type: 'GET',
     contentType: 'application/json',
   })
