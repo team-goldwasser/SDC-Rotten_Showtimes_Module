@@ -1,25 +1,25 @@
 {
   "development": {
-    "username": "Chen",
-    "password": null,
+    "username": "root",
+    "password": "fecrootpw",
     "database": "rottentomatoes",
-    "host": "127.0.0.1",
+    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
     "dialect": "postgres",
     "define": { "timestamps": false }
   },
   "test": {
-    "username": "Chen",
-    "password": null,
+    "username": "root",
+    "password": "fecrootpw",
     "database": "rottentomatoes",
-    "host": "127.0.0.1",
+    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
     "dialect": "postgres",
     "define": { "timestamps": false }
   },
   "production": {
-    "username": "Chen",
-    "password": null,
+    "username": "root",
+    "password": "fecrootpw",
     "database": "rottentomatoes",
-    "host": "127.0.0.1",
+    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
     "dialect": "postgres",
     "define": { "timestamps": false }
   }
