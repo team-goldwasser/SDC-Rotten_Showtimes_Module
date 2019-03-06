@@ -3,7 +3,7 @@
     "username": "root",
     "password": "fecrootpw",
     "database": "rtshowtimes",
-    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com/rtshowtimes",
+    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
     "dialect": "postgres",
     "define": { "timestamps": false }
   },
@@ -11,7 +11,7 @@
     "username": "root",
     "password": "fecrootpw",
     "database": "rtshowtimes",
-    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com/rtshowtimes",
+    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
     "dialect": "postgres",
     "define": { "timestamps": false }
   },
@@ -19,7 +19,7 @@
     "username": "root",
     "password": "fecrootpw",
     "database": "rtshowtimes",
-    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com/rtshowtimes",
+    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
     "dialect": "postgres",
     "define": { "timestamps": false }
   }
