@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "fecrootpw",
-    "database": "rottentomatoes",
+    "database": "rtshowtimes",
     "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
     "dialect": "postgres",
     "define": { "timestamps": false }
@@ -10,7 +10,7 @@
   "test": {
     "username": "root",
     "password": "fecrootpw",
-    "database": "rottentomatoes",
+    "database": "rtshowtimes",
     "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
     "dialect": "postgres",
     "define": { "timestamps": false }
@@ -18,7 +18,7 @@
   "production": {
     "username": "root",
     "password": "fecrootpw",
-    "database": "rottentomatoes",
+    "database": "rtshowtimes",
     "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
     "dialect": "postgres",
     "define": { "timestamps": false }
