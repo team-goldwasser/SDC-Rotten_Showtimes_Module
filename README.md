@@ -1,6 +1,6 @@
 ## What is it?
-Tickets & Showtimes module for a Rotten Tomatoes clone project.
-It allows user to see movie showtimes of the day in a close-by theater and update location.
+- Tickets & Showtimes module for a Rotten Tomatoes clone group project at Hack Reactor.
+- It allows user to see movie showtimes of the day in a close-by theater and update location.
 
 ## Deployement
 AWS: Dockerized Node App & RDS for PostgreSQL
