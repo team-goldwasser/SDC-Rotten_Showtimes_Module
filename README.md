@@ -1,18 +1,35 @@
-# showtimes
+## What it is
+Tickets & Showtimes module for a Rotten Tomatoes clone project.
+It allows user to see movie showtimes of the day in a close-by theater and update location.
 
-> show movie showtimes
+## Deployement
+AWS: Dockerized Node App & RDS for PostgreSQL
+http://ec2-13-56-224-90.us-west-1.compute.amazonaws.com/m/black_panther/
 
-## Build Setup
+Cloudfront with improved page load speed
+http://d2ep4rt8xwsle9.cloudfront.net/m/black_panther/
 
-``` bash
-# install dependencies
-npm install
+Change movie title in the url to update (e.g. the_avengers)
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Tech Choices
+Client
+  Vue
+	Bootstrap
+	Bootstrap-Vue
+	CSS
+	
+Server
+	Node
+	Express
 
-# build for production with minification
-npm run build
-```
+Database
+	PostgreSQL
+	Sequelize
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Testing
+	Jest
+	Vue-Test-Utils
+
+	
+
+
