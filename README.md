@@ -1,4 +1,4 @@
-## What it is
+## What is it?
 Tickets & Showtimes module for a Rotten Tomatoes clone project.
 It allows user to see movie showtimes of the day in a close-by theater and update location.
 
