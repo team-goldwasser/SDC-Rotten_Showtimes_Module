@@ -4,7 +4,7 @@
 
 ## Deployement
 AWS: Dockerized Node App & RDS for PostgreSQL
-- http://ec2-13-56-224-90.us-west-1.compute.amazonaws.com/m/black_panther/
+- http://ec2-54-219-183-29.us-west-1.compute.amazonaws.com/m/black_panther/
 
 Cloudfront with improved page load speed
 - http://d2ep4rt8xwsle9.cloudfront.net/m/black_panther/
