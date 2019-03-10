@@ -1,11 +1,12 @@
 import $ from 'jquery';
 
+const serviceUrl = 'http://ec2-54-219-183-29.us-west-1.compute.amazonaws.com';
+
 const getInfo = (zip, callback) => {
   // sample url: "some-host/m/black_panther"
   const titleUrl = window.location.pathname.split('/m/')[1].replace('/', '');
-  console.log(titleUrl);
   $.ajax({
-    url: `http://ec2-54-67-109-163.us-west-1.compute.amazonaws.com:9002/showtime/${titleUrl}/${zip}`,
+    url: `${serviceUrl}/showtime/${titleUrl}/${zip}`,
     type: 'GET',
     contentType: 'application/json',
   })
