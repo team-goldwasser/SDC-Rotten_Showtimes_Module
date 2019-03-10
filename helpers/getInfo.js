@@ -4,7 +4,7 @@ const getInfo = (zip, callback) => {
   // sample url: "some-host/m/black_panther"
   const titleUrl = window.location.pathname.split('/m/')[1].replace('/', '');
   $.ajax({
-    url: `ec2-54-219-183-29.us-west-1.compute.amazonaws.com:9002/showtime/${titleUrl}/${zip}`,
+    url: `http://ec2-54-219-183-29.us-west-1.compute.amazonaws.com:80/showtime/${titleUrl}/${zip}`,
     type: 'GET',
     contentType: 'application/json',
   })
