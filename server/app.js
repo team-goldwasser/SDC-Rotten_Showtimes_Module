@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;
-  console.log(titleUrl);
+  console.log(`in get /showtime/:title_url/:zip ${titleUrl}`);
 
   const data = {
     movie_title_url: titleUrl,
