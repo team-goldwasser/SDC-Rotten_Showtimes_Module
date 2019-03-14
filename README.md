@@ -2,6 +2,22 @@
 - Tickets & Showtimes module for a Rotten Tomatoes clone group project at Hack Reactor.
 - It allows user to see movie showtimes of the day in a close-by theater and update location.
 
+## Getting Started
+### Prerequisite
+- Install PostgreSQL:
+https://www.postgresql.org/download/macosx/
+- Start a PSQL server
+```postgres -D /usr/local/var/postgres```
+- In a new window, create database rottentomatoes
+```createdb rottentomatoes```
+- Use the rottentomatoes database
+```psql -s somedbname```
+- Copy code in schema.sql and paste into the database command line to create tables and schemas
+### Installing
+- ```npm install```
+### Seed demo data
+- ```npm run seed-all```
+
 ## Deployement
 AWS: Dockerized Node App & RDS for PostgreSQL
 - http://ec2-54-219-183-29.us-west-1.compute.amazonaws.com/m/black_panther/
