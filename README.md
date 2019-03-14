@@ -1,5 +1,5 @@
 ## What is it?
-- Tickets & Showtimes module for a Rotten Tomatoes clone group project at Hack Reactor.
+- Tickets & Showtimes module for a Rotten Tomatoes clone project.
 - It allows user to see movie showtimes of the day in a close-by theater and update location.
 
 ## Getting Started
@@ -17,6 +17,11 @@ https://www.postgresql.org/download/macosx/
 - ```npm install```
 ### Seed demo data
 - ```npm run seed-all```
+### Build
+- Dev: ```npm run dev```
+- Production: ```npm run build```
+### Test
+- Run Jest tests: ```npm run test```
 
 ## Deployement
 AWS: Dockerized Node App & RDS for PostgreSQL
@@ -46,6 +51,16 @@ Testing
 - Jest
 - Vue-Test-Utils
 
-	
+## Acknowledgements
+- This is a group project that I completed with bernardlau and chrisweilacker at Hack Reactor.
+- Each member clones one service module from Rotten Tomatoes
+- Each member creates a proxy server to combine all modules
+
+### Related Projects
+- Proxy Server: https://github.com/number-ape/rotten_pomodoro_proxy_chen
+- Scoreboard (chrisweilacker): https://github.com/number-ape/Rotten_Tomatoes_Scoreboard_Service
+- Audience Review (bernardlau): https://github.com/number-ape/Rotten_Tomatoes_Reviews_Service
+
+
 
 
