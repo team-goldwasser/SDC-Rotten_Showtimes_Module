@@ -56,7 +56,7 @@ Testing
 - Each member clones one service module from Rotten Tomatoes
 - Each member creates a proxy server to combine all modules
 
-### Related Projects
+## Related Projects
 - Proxy Server: https://github.com/number-ape/rotten_pomodoro_proxy_chen
 - Scoreboard (chrisweilacker): https://github.com/number-ape/Rotten_Tomatoes_Scoreboard_Service
 - Audience Review (bernardlau): https://github.com/number-ape/Rotten_Tomatoes_Reviews_Service
