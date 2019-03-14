@@ -20,6 +20,8 @@ https://www.postgresql.org/download/macosx/
 ### Build
 - Dev: ```npm run dev```
 - Production: ```npm run build```
+### Start Local Server
+- ```npm start```
 ### Test
 - Run Jest tests: ```npm run test```
 
