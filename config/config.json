@@ -1,26 +1,22 @@
 {
   "development": {
-    "username": "root",
-    "password": "fecrootpw",
-    "database": "rtshowtimes",
-    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
+    "username": "eric",
+    "password": "chalon1980",
+    "database": "rottentomatoes",
+    "host": "localhost",
     "dialect": "postgres",
-    "define": { "timestamps": false }
+    "define": {
+      "timestamps": false
+    }
   },
   "test": {
-    "username": "root",
-    "password": "fecrootpw",
-    "database": "rtshowtimes",
-    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
+    "username": "eric",
+    "password": "chalon1980",
+    "database": "rottentomatoes",
+    "host": "localhost",
     "dialect": "postgres",
-    "define": { "timestamps": false }
-  },
-  "production": {
-    "username": "root",
-    "password": "fecrootpw",
-    "database": "rtshowtimes",
-    "host": "chen-fec-project.cykv1jydtn8g.us-west-1.rds.amazonaws.com",
-    "dialect": "postgres",
-    "define": { "timestamps": false }
+    "define": {
+      "timestamps": false
+    }
   }
 }

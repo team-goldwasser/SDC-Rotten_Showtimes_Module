@@ -1,3 +1,4 @@
+
 /*database: rottentomatoes*/
 
 CREATE TABLE theaters (
@@ -8,7 +9,7 @@ CREATE TABLE theaters (
   state varchar(20),
   zip bigint,
   phone varchar(20)
-)
+);
 
 CREATE TABLE movies (
   id bigint NOT NULL UNIQUE PRIMARY KEY,
@@ -16,7 +17,7 @@ CREATE TABLE movies (
   title_url varchar(255),
   tmdb_poster_path varchar(255),
   tmdb_backdrop_path varchar(255)
-)
+);
 
 CREATE TYPE seat AS ENUM ('standard', 'recliner', '3D');
 CREATE TABLE showtimes (
@@ -26,4 +27,4 @@ CREATE TABLE showtimes (
   seat varchar(80),
   theater_id integer REFERENCES theaters (ID),
   movie_id bigint REFERENCES movies (id)
-)
+);
