@@ -19,7 +19,7 @@ const close = 22;
 const generateIds = (count) => {
   var result = [];
   // while(count < 2501) {
-  while (count < 2501) {
+  while (count < 10001) {
     result.push(count)
     count++;
   }
