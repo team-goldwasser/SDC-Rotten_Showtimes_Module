@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     week_day: DataTypes.INTEGER,
     start_time: DataTypes.STRING,
     seat: DataTypes.STRING,
-    theater_id: DataTypes.INTEGER,
+    theater_id: DataTypes.BIGINT,
     movie_id: DataTypes.BIGINT
   }, {});
   showtime.associate = function(models) {

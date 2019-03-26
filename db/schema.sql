@@ -1,5 +1,6 @@
 
 /*database: rottentomatoes*/
+DROP TABLE IF EXISTS showtimes;
 
 CREATE TABLE theaters (
   ID SERIAL PRIMARY KEY,
@@ -25,6 +26,6 @@ CREATE TABLE showtimes (
   week_day integer,
   start_time varchar(80),
   seat varchar(80),
-  theater_id integer REFERENCES theaters (ID),
-  movie_id bigint REFERENCES movies (id)
+  theater_id integer,
+  movie_id BIGINT
 );

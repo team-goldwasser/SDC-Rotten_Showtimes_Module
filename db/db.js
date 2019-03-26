@@ -6,8 +6,8 @@ const Movie = require('../models/movie.js')(db, Sequelize);
 const Showtime = require('../models/showtime.js')(db, Sequelize);
 const Theater = require('../models/theater.js')(db, Sequelize);
 
-Movie.hasMany(Showtime, { foreignKey: 'movie_id', sourceKey: 'id' });
-Theater.hasMany(Showtime, { foreignKey: 'theater_id', sourceKey: 'id' });
+// Movie.hasMany(Showtime, { foreignKey: 'movie_id', sourceKey: 'id'});
+// Theater.hasMany(Showtime, { foreignKey: 'theater_id', sourceKey: 'id'});
 
 // get the closest theater
 // current definition of 'closest': Math.abs(theaterZip - inputZip)
