@@ -15,6 +15,9 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
+//establish a connection to the database with env variables and the cofig, and gather the model files
+//from the current directory and add them to the db object
+
 fs
   .readdirSync(__dirname)
   .filter(file => {

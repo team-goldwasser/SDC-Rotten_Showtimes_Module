@@ -3,8 +3,8 @@
 var generateTheaters = require('../db/utils/genTheater.js')
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('theaters', generateTheaters(5), {});
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert('theaters', generateTheaters(10000), {});
   },
 
   down: (queryInterface, Sequelize) => {

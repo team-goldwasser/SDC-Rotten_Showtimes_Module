@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
-    zip: DataTypes.BIGINT,
+    zip: DataTypes.INTEGER,
     phone: DataTypes.STRING
   }, {});
   theater.associate = function(models) {
