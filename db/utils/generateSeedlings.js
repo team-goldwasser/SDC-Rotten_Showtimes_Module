@@ -20,13 +20,6 @@ const path = require('path');
 
 
 
-// begin;
-
-
-// COPY movies(title, title_url, tmbd_poster_path, tmbd_backdrop_path) FROM '/Users/macbook/Documents/HRPT11/SDC-Rotten_Showtimes_Module/db/sample/movies.csv' DELIMITER ',' CSV HEADER;
-
-//create insert invoke generateTheaters(5000)
-
-
 // ALTER TABLE 
 // ADD PRIMARY KEY(product_no);
+//ADD FORIEGN KEY CONSTRAINT 
