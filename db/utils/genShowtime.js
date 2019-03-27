@@ -19,7 +19,7 @@ const close = 22;
 const generateIds = (count) => {
   var result = [];
   // while(count < 2501) {
-  while (count < 10001) {
+  while (count < 5001) {
     result.push(count)
     count++;
   }
@@ -27,6 +27,7 @@ const generateIds = (count) => {
 }
 // const theaterIds = [1,2,3,4,5];
 const theaterIds = generateIds(1);
+//could do a selectAll query to return all ids from theaters
 
 console.log(theaterIds[theaterIds.length - 1]);
 // hand-picked 5 movies' id:
