@@ -18,10 +18,18 @@ module.exports = {
         type: Sequelize.STRING
       },
       theater_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Theater',
+          key: 'ID'
+        }
       },
       movie_id: {
-        type: Sequelize.BIGINT
+        type: Sequelize.BIGINT,
+        references: {
+          model: 'Movie',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

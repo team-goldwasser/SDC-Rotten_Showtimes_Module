@@ -7,6 +7,8 @@
 // }
 
 const movies = require('../sample/parsedMovies.js');
+// const db = require('../mongodb/mongoModels/movies');
+
 
 const generateMovie = () => {
   const results = [];
