@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING //she also has in the
       },
       address: {
         type: Sequelize.STRING
@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       zip: {
-        type: Sequelize.BIGINT
+        type: Sequelize.BIGINT //might need to create an index here (secondary?)/(unique?) 
       },
       phone: {
         type: Sequelize.STRING

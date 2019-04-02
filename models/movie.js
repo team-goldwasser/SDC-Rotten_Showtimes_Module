@@ -6,12 +6,17 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     title: DataTypes.STRING,
-    title_url: DataTypes.STRING,
+    title_url: {
+      type: DataTypes.STRING,
+      unique: true
+    },
     tmdb_poster_path: DataTypes.STRING,
     tmdb_backdrop_path: DataTypes.STRING
   }, {});
-  movie.associate = function(models) {
+  movie.associate = (models) => {
+    // movie.hasMany(models.Showtime, { foreignKey: 'movie_id' })
     // associations can be defined here
   };
   return movie;
 };
+

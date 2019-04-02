@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     zip: DataTypes.INTEGER,
     phone: DataTypes.STRING
   }, {});
-  theater.associate = function(models) {
+  theater.associate = (models) => {
+    // theater.hasMany(models.Showtime, { foreignKey: 'theater_id' })
     // associations can be defined here
   };
   return theater;

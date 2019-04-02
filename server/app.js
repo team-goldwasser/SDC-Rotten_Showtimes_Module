@@ -5,6 +5,7 @@ const { getTheater, getMovieShowtimes } = require('../db/db.js');
 
 const app = express();
 
+
 app.use('/m/:title_url', express.static(path.join(__dirname, '../dist')));
 
 app.use((req, res, next) => {
@@ -12,6 +13,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
+
 
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;

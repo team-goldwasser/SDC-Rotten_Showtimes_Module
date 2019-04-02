@@ -10,9 +10,12 @@ https://www.postgresql.org/download/macosx/
 ```postgres -D /usr/local/var/postgres```
 - In a new window, create database rottentomatoes
 ```createdb rottentomatoes```
-- Use the rottentomatoes database
-```psql -s somedbname```
-- Copy code in schema.sql and paste into the database command line to create tables and schemas
+- connect to rottentomatoes database server
+```psql -s rottentomatoes```
+
+- Create tables from schema.sql either by dropping create statements into database or run this command in psql terminal
+```\i './db/schema.sql';```
+
 ### Installing
 - ```npm install```
 ### Seed demo data
