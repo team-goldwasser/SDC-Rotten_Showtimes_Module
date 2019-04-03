@@ -6,7 +6,7 @@
 //   tmdb_backdrop_path: '/cezWGskPY5x7GaglTTRN4Fugfb8.jpg',
 // }
 
-const movies = require('../sample/parsedMovies.js');
+const movies = require('../../sample/parsedMovies');
 // const db = require('../mongodb/mongoModels/movies');
 
 

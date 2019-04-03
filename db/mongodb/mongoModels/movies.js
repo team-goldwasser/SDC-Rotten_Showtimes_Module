@@ -16,6 +16,4 @@ const movieSchema = new Schema({
   tmdb_backdrop_path: String
 })
 
-
-
 module.exports = mongoose.model('Movie', movieSchema);
