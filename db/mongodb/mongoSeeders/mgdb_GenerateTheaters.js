@@ -8,7 +8,7 @@
 // }
 
 
-const faker = require('faker/locale/en_CA');
+const faker = require('faker');
 
 
 const locationTitles = ['Pictures', 'Shows', 'Cinema', 'Cinemas', 'Studios', 'Theater', 'Theaters', 'Theatre', 'Theatres'];

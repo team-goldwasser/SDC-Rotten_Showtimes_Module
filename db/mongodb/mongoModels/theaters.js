@@ -25,9 +25,9 @@ const theaterSchema = new Schema({
 })
 
 //Virtual for getting theaters full address/details in string
-Theater.virtual('address').get(function() {
-  return `${this.name}, ${this.address}, ${this.city}, ${this.state} ${this.zip}`
-})
+// Theater.virtual('address').get(function() {
+//   return `${this.name}, ${this.address}, ${this.city}, ${this.state} ${this.zip}`
+// })
 
 //virtual for getting theaters list of showtimes
 

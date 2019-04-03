@@ -17,8 +17,7 @@ Theater.hasMany(Showtime, {
   foreignKey: 'theater_id',
   sourceKey: 'id'
 });
-Showtime.belongsTo(Theater, { as: 'TheaterRef', foreignKey: 'theater_id'});
-Showtime.belongsTo(Movie, { as: 'MovieRef', foreignKey: 'movie_id'});
+
 
 // get the closest theater
 // current definition of 'closest': Math.abs(theaterZip - inputZip)
