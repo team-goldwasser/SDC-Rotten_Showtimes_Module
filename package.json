@@ -10,7 +10,8 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack -d --watch --progress --hide-modules",
     "test": "jest",
-    "seed-all": "node_modules/.bin/sequelize db:seed:all --debug"
+    "seed-all": "node_modules/.bin/sequelize db:seed:all --debug",
+    "seed": "node ./db/mongodb/mongoSeeding/mgdb_seed.js"
   },
   "dependencies": {
     "@vue/test-utils": "^1.0.0-beta.29",
