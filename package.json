@@ -11,7 +11,7 @@
     "build": "cross-env NODE_ENV=production webpack -d --watch --progress --hide-modules",
     "test": "jest",
     "seed-all": "node_modules/.bin/sequelize db:seed:all --debug",
-    "seed": "node ./db/mongodb/mongoSeeding/mgdb_seed.js"
+    "seed": "node ./db/mongodb/mongoSeeders/mgdb_seed.js"
   },
   "dependencies": {
     "@vue/test-utils": "^1.0.0-beta.29",
@@ -39,6 +39,7 @@
     "gulp-clean-css": "^4.0.0",
     "jest": "^24.1.0",
     "jquery": "^3.3.1",
+    "mongodb": "^3.2.2",
     "mongoose": "^5.4.20",
     "performance-now": "^2.1.0",
     "pg": "^7.8.0",
