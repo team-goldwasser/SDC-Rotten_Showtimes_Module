@@ -29,7 +29,7 @@ const generateIds = (count) => {
 const theaterIds = generateIds(1);
 //could do a selectAll query to return all ids from theaters
 
-console.log(theaterIds[theaterIds.length - 1]);
+// console.log(theaterIds[theaterIds.length - 1]);
 // hand-picked 5 movies' id:
 // Black Panther, The Avengers, Inception, Star Wars: The Last Jedi, Incredibles 2
 const movieIds = [284054, 24428, 27205, 181808, 260513, 169917, 102899, 245891, 263115, 297802];
@@ -58,8 +58,10 @@ const generateShowtime = () => {
       });
     });
   });
-
+  console.log('the results length', results.length);
   return results;
 };
+
+generateShowtime();
 
 module.exports = generateShowtime;
