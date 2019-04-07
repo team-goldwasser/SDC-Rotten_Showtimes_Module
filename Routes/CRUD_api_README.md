@@ -9,9 +9,9 @@ REST PRINCIPALS:
 clearly defined endpoints with a clearly defined request results in a clearly defined response data structure
 
 Create / POST - create a new item 
-  - create a new showtime, movie, theater? 
+  - create a new showtime? 
 
-app.post('/api/reviews'???comments?, (req, res) => {
+app.post('/'???comments?, (req, res) => {
   //return a status code 201
   //page stuff that includes newly posted item
   //purchase of ticket? for that available showtime?

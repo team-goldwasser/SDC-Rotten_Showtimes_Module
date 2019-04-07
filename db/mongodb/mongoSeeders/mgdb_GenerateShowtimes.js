@@ -27,13 +27,10 @@ const generateIds = (count) => {
   }
   return result;
 }
-// const theaterIds = [1,2,3,4,5];
+// const theaterIds = [1,2,3,4,5...];
 const theaterIds = generateIds(1);
-//could do a selectAll query to return all ids from theaters
 
-// console.log(theaterIds[theaterIds.length - 1]);
-// hand-picked 5 movies' id:
-// Black Panther, The Avengers, Inception, Star Wars: The Last Jedi, Incredibles 2
+
 const movieIds = [284054, 24428, 27205, 181808, 260513, 169917, 102899, 245891, 263115, 297802];
 
 

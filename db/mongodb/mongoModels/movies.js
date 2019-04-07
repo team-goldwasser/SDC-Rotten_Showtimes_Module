@@ -2,12 +2,15 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const movieSchema = new Schema({
-  id: {
+const MovieSchema = new Schema({
+  _id: {
     type: Number,
     unique: true
   },
-  title: String,
+  title: {
+    type: String,
+    unique: true,
+  },
   title_url: {
     type: String,
     unique: true
@@ -16,4 +19,7 @@ const movieSchema = new Schema({
   tmdb_backdrop_path: String
 })
 
-module.exports = mongoose.model('Movie', movieSchema);
+// 
+
+
+module.exports = mongoose.model('movie', MovieSchema);

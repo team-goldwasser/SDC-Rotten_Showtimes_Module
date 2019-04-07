@@ -7,9 +7,7 @@
 //   phone: '(415) 369-6207'
 // }
 
-
-const faker = require('faker/locale/en_CA');
-
+const faker = require('faker');
 
 const locationTitles = ['Pictures', 'Shows', 'Cinema', 'Cinemas', 'Studios', 'Theater', 'Theaters', 'Theatre', 'Theatres'];
 const cinemaPrefix = ["AMC", "UA", "Century", "AMC at the", "ArcLight", "Pacific", "NewMark", "Landmark", "Regal"];

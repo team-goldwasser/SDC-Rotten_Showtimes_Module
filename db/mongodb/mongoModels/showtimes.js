@@ -2,24 +2,25 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const showtimeSchema = new Schema({
-  id: {
+const ShowtimeSchema = new Schema({
+  _id: {
     type: Number,
-    autoIncrement: true
+    autoIncrement: true,
+    unique: true
   },
   week_day: Number,
   start_time: String,
   seat: String,
   theater_id: {
-    type: Schema.Types.ObjectId,
+    type: Number,
     required: true,
-    ref: 'Theater'
+    ref: 'theater'
   },
   movie_id: {
-    type: Schema.Types.ObjectId,
+    type: Number,
     required: true,
-    ref: 'Movie'
+    ref: 'movie'
   }
 })
 
-module.exports = mongoose.model('Showtime', showtimeSchema);
+module.exports = mongoose.model('showtime', ShowtimeSchema);
