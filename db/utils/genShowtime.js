@@ -18,8 +18,8 @@ const close = 22;
 // db id
 const generateIds = (count) => {
   var result = [];
-  // while(count < 2501) {
-  while (count < 5001) {
+  while(count < 5001) {
+  // while (count < 5001) {
     result.push(count)
     count++;
   }
@@ -58,10 +58,9 @@ const generateShowtime = () => {
       });
     });
   });
-  console.log('the results length', results.length);
+  // console.log('the results length', results.length);
   return results;
 };
 
-generateShowtime();
 
 module.exports = generateShowtime;

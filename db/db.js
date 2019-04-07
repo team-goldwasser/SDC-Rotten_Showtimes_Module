@@ -32,29 +32,30 @@ module.exports.getTheater = (zip, callback) => {
   }).catch((err) => {
     console.log(`get theater in db error: ${err}`);
   }).then((theater) => {
-      var endTime = now();
-      console.log('***getTheater query performance time:', endTime - startTime);
-      callback(theater);
-  }) 
+    var endTime = now();
+    console.log('***getTheater query performance time:', endTime - startTime);
+    callback(theater);
+  })
 
- //findOne by zipcode
- //if no theater with that zip
- //return the default theater
 
-//   Theater.findAll({
-//       limit: 1,
-//       order: [
-//         [db.fn('abs', db.condition(db.col('zip'), '-', zip)), 'ASC']
-//       ],
-//     })
-//     .catch((err) => {
-//       console.log(`get theater in db error: ${err}`);
-//     })
-//     .then((theaters) => {
-//       var endTime = now();
-//       console.log('***getTheater query performance time:', endTime - startTime);
-//       callback(theaters[0]);
-//     });
+  //findOne by zipcode
+  //if no theater with that zip
+  //return the default theater
+
+  //   Theater.findAll({
+  //       limit: 1,
+  //       order: [
+  //         [db.fn('abs', db.condition(db.col('zip'), '-', zip)), 'ASC']
+  //       ],
+  //     })
+  //     .catch((err) => {
+  //       console.log(`get theater in db error: ${err}`);
+  //     })
+  //     .then((theaters) => {
+  //       var endTime = now();
+  //       console.log('***getTheater query performance time:', endTime - startTime);
+  //       callback(theaters[0]);
+  //     });
 
 };
 
@@ -98,3 +99,5 @@ module.exports.getMovieShowtimes = (titleUrl, theaterId, callback) => {
         });
     });
 };
+
+

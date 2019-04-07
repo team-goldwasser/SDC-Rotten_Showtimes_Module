@@ -1,8 +1,12 @@
 const express = require('express');
 const path = require('path');
 
-const { getTheater, getMovieShowtimes } = require('../db/db.js');
+const {
+  getTheater,
+  getMovieShowtimes
+} = require('../db/db.js');
 
+const showtimeRoutes = require('../Routes/showtimes');
 
 const app = express();
 
@@ -15,6 +19,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(showtimeRoutes);
 
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;
@@ -40,6 +45,23 @@ app.get('/showtime/:title_url/:zip', (req, res) => {
     });
   });
 });
+
+
+
+
+
+
+
+app.post('/theater/:id/:title_url/:start_time/', (req, res) => {
+  console.log('in the post showtime route', req.params);
+  
+  res.status(201).json({"hi": "there"})
+
+
+})
+
+
+
 
 
 

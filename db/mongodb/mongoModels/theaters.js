@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
-
+const ShowtimeSchema = require('./showtimes');
+const MovieSchema = require('./movies');
 const Schema = mongoose.Schema;
 
-const theaterSchema = new Schema({
-  id: {
+const TheaterSchema = new Schema({
+  _id: {
     type: Number,
-    autoIncrement: true
+    autoIncrement: true,
+    unique: true
   },
   name: {
     type: String,
@@ -22,16 +24,14 @@ const theaterSchema = new Schema({
     index: true
   },  
   phone: String
+  // showtimes: [ShowtimeSchema],
+  // movie: [MovieSchema]
 })
 
-//Virtual for getting theaters full address/details in string
-// Theater.virtual('address').get(function() {
-//   return `${this.name}, ${this.address}, ${this.city}, ${this.state} ${this.zip}`
-// })
+//virtual for get showtimes
 
-//virtual for getting theaters list of showtimes
+//virtual for get movie
 
 
 
-
-module.exports = mongoose.model('Theater', theaterSchema);
+module.exports = mongoose.model('theater', TheaterSchema);
