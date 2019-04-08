@@ -39,15 +39,13 @@ Install PostgreSQL:
 
 ## CRUD Api
 
-~ GET '/showtime/:title_url/:zip/theaters' - returns a list of all theaters from specified zipcode        with showtimes for specified title_url
+~ GET '/showtime/:title_url/:zip' - returns showtimes for movie at theater closest to specified zipcode
 
-~ POST '/theater/:id/:title_url/:showtime' - to add a showtime for a particular movie at a           theater location
+~ POST '/theater/showtime/:id' - inserts a new showtime record for the movie showing at the theater location specified by id
 
-      day=2&time=1000&st=standard - adds a m
+~ PUT 'theater/:id/showtime/:id' - to update a showtime for a particular movie showing at the specified theater location 
 
-~ PUT '/theater/:id/:title_url/:showtime' - to update a showtime for a particular movie and          theater location 
-
-~ DELETE '/theater/:id/:title_url/:showtime' - to remove any particular showtime for a movie at a     particular location
+~ DELETE '/theater/:id/showtime/:id' - to remove any particular showtime for a movie at a     particular location
 
 
  

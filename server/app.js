@@ -1,25 +1,26 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const morgan = require('morgan');
 
-const {
-  getTheater,
-  getMovieShowtimes
-} = require('../db/db.js');
 
-const showtimeRoutes = require('../Routes/showtimes');
+const { getTheater, getMovieShowtimes, addShowtimes, updateShowtime, deleteShowtime } = require('../db/db.js');
+
 
 const app = express();
 
 
-app.use('/m/:title_url', express.static(path.join(__dirname, '../dist')));
+app.use('/m/:title_url/', express.static(path.join(__dirname, '../dist')));
+// app.use('/m/:title_url/:zip', express.static(path.join(__dirname, '../dist')));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+app.use(bodyParser.json());
+app.use(morgan('dev'));
+app.use(cors());
 
-app.use(showtimeRoutes);
 
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;
@@ -46,24 +47,17 @@ app.get('/showtime/:title_url/:zip', (req, res) => {
   });
 });
 
+http: //localhost:9002/theater/showtime/?id=23256&title_url=black_panther&start_time=1230&week_day=5&seat=standard
 
-
-
-
-
-
-app.post('/theater/:id/:title_url/:start_time/', (req, res) => {
-  console.log('in the post showtime route', req.params);
-  
-  res.status(201).json({"hi": "there"})
-
-
-})
-
-
-
-
-
-
+app.post('/theater/showtime/', (req, res) => {
+  var query = req.query;
+  var reRoute = req.route.path;
+  console.log('reRoute', reRoute);
+  console.log('in the post showtime route', query); 
+  addShowtimes(query)
+  res.status(201).json({
+    message: `success adding new showtime to database`
+  });
+});
 
 module.exports = app;

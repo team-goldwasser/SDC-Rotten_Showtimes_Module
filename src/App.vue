@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      zip: 94112,
+      zip: 90036,
       title_url: 'black_panther',
       theater: {},
       threeDTitle: 'DIGITAL 3D SHOWTIMES',
