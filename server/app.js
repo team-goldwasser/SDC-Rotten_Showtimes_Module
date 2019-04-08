@@ -71,7 +71,17 @@ app.put('/theater/showtime/', (req, res) => {
   })
 })
 
+app.delete('theater/showtime/', (req, res) => {
+  var query = req.query;
+  var reRoute = req.route.path;
+  console.log('reRoute', reRoute); // could use for possible redirect
+  console.log('in the post showtime route', query);
 
+  deleteShowtime(query)
+  res.status(203).json({
+    "message": `you successfully deleted the showtime #${query.id}`
+  })
+})
 
 
 module.exports = app;
