@@ -60,4 +60,18 @@ app.post('/theater/showtime/', (req, res) => {
   });
 });
 
+app.put('/theater/showtime/', (req, res) => {
+  var query = req.query;
+  var reRoute = req.route.path;
+  console.log('reRoute', reRoute);
+  console.log('in the update showtime route', query);
+  updateShowtime(query)
+  res.status(202).json({
+    "message": `you have successfully updated showtime with an id of ${query.id}`
+  })
+})
+
+
+
+
 module.exports = app;
