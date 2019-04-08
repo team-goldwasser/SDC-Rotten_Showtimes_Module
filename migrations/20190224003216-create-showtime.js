@@ -19,6 +19,7 @@ module.exports = {
       },
       theater_id: {
         type: Sequelize.INTEGER,
+        underscored: true,
         references: {
           model: 'Theater',
           key: 'ID'
@@ -26,6 +27,7 @@ module.exports = {
       },
       movie_id: {
         type: Sequelize.BIGINT,
+        underscored: true,
         references: {
           model: 'Movie',
           key: 'id'

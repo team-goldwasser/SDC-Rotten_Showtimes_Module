@@ -9,6 +9,7 @@ const Showtime = require('../models/showtime.js')(db, Sequelize);
 const Theater = require('../models/theater.js')(db, Sequelize);
 var now = require('performance-now');
 
+// Showtime.belongsTo(Movie, { constraints: true, onDelete: 'CASCADE', });
 Movie.hasMany(Showtime, {
   foreignKey: 'movie_id',
   sourceKey: 'id'
@@ -101,3 +102,103 @@ module.exports.getMovieShowtimes = (titleUrl, theaterId, callback) => {
 };
 
 
+// module.exports.getMovieById = (id, callback) => {
+//   var startTime = now();
+//   const id = req.query.id;
+//   Movie.findOne({
+    
+//   }
+//     .then(movie => {
+//       console.log('you found the movie', movie)
+//     })
+//     .catch((err) => {
+//      console.log(`err in getMovieById: ${err}`);
+//    })
+//    .then((result) => {
+//      var endTime = now();
+//      console.log('***getMovieById query performance time:', endTime - startTime);
+//      callback(result);
+//    })
+// }
+
+
+module.exports.addShowtimes = (query) => {
+  var start = now();
+
+  const { id, title_url, week_day, start_time, seat } = query;
+  console.log('this is the theater id', id);
+
+  Movie.findOne({ where: {
+        title_url: title_url
+      }})
+  .then(movie => {
+    const movie_id = movie.id;
+    console.log('this is the movie', movie.title_url)
+    console.log('this is the movie', movie.id)
+    const movieId = movie_id;
+    Showtime.create({
+        week_day: week_day,
+        start_time: start_time,
+        seat: seat,
+        theater_id: id,
+        movie_id: movieId
+      })
+      .then(showtime => {
+        console.log('success creating a showtime', showtime);
+      })
+      .catch(err => {
+        console.log('err creating showtime', err);
+      })
+      .then(() => {
+        var end = now();
+        console.log('***addShowtime query performance time:', end - start);
+      })
+  })
+}
+
+
+
+module.exports.updateShowtime = (query) => {
+  var start = now();
+  const { id, title_url, week_day, start_time, seat} = query;
+
+  Showtime.findOne({ where: { id: id }})
+    .then(showtime => {
+      var theater_id = showtime.theater_id;
+      console.log('SHOWTIME', theater_id);
+      showtime.update({
+        id: id,
+        week_day: week_day,
+        start_time: start_time,
+        seat: seat,
+        theater_id: theater_id,
+        movie_id: movie_id
+      }, { fields: ['week_day', 'start_time', 'seat']
+    })
+      return showtime.save();
+  })
+  .then(result => {
+    console.log('updated showtime', result);
+  })
+  .catch(err => {
+    console.log('err updating a single showtime', err);
+})
+  var end = now();
+  console.log('***updateShowtime query performance time:', end - start);
+}
+
+
+
+module.exports.deleteShowtime = (req, res, next) => {
+  var start = now();
+  const { id } = query;
+
+  Showtime.findByPk(id)
+  .then(showtime => {
+    return showtime.destroy()
+  })
+  .then(result => {
+    console.log('deleted showtime', result);
+  })
+  .catch(err => console.log('err trying to delete showtime', err))
+}

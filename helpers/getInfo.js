@@ -2,7 +2,12 @@ import $ from 'jquery';
 
 const getInfo = (zip, callback) => {
   // sample url: "some-host/m/black_panther"
+  // const zip = window.navigator.geolocation.getCurrentPosition()
+  // console.log('this is the zip every fucking time', zip);
+  // const zip = window.location.pathname.split('/m/')[2].replace('/', '');
+  // console.log('this is zip', zip);
   const titleUrl = window.location.pathname.split('/m/')[1].replace('/', '');
+  console.log('this is title_url', title_url);
   $.ajax({
     // url: `http://ec2-54-219-183-29.us-west-1.compute.amazonaws.com:80/showtime/${titleUrl}/${zip}`,
     url: `http://localhost:9002/showtime/${titleUrl}/${zip}`,
