@@ -32,8 +32,6 @@ module.exports = (sequelize, DataTypes) => {
   showtime.associate = (models) => {
     // associations can be defined here for Theater.hasMany(Showtime) Theater is the source and Showtime is target
     models.showtime.belongsTo(models.movie, {
-      constraints: true,
-      onDelete: 'CASCADE',
       underscorded: true
     });
     models.movie.hasMany(models.showtime, {
