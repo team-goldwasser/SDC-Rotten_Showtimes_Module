@@ -71,7 +71,7 @@ app.put('/theater/showtime/', (req, res) => {
   })
 })
 
-app.delete('theater/showtime/', (req, res) => {
+app.delete('theater/showtime/:id', (req, res) => {
   var query = req.query;
   var reRoute = req.route.path;
   console.log('reRoute', reRoute); // could use for possible redirect

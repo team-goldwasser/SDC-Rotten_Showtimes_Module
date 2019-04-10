@@ -189,16 +189,17 @@ module.exports.updateShowtime = (query) => {
 
 
 
-module.exports.deleteShowtime = (req, res, next) => {
+module.exports.deleteShowtime = (query) => {
   var start = now();
-  const { id } = query;
-
-  Showtime.findByPk(id)
+  
+  Showtime.findOne({ where: { id: query.id }})
   .then(showtime => {
-    return showtime.destroy()
+    return showtime.destroy({ force: true })
   })
   .then(result => {
     console.log('deleted showtime', result);
   })
   .catch(err => console.log('err trying to delete showtime', err))
+  var end = now();
+  console.log('time for the deleteShowtime:', end - start);
 }
