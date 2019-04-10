@@ -47,7 +47,7 @@ app.get('/showtime/:title_url/:zip', (req, res) => {
   });
 });
 
-http: //localhost:9002/theater/showtime/?id=23256&title_url=black_panther&start_time=1230&week_day=5&seat=standard
+//example Url: http://localhost:9002/theater/showtime/?id=23256&title_url=black_panther&start_time=1230&week_day=5&seat=standard
 
 app.post('/theater/showtime/', (req, res) => {
   var query = req.query;
@@ -60,6 +60,8 @@ app.post('/theater/showtime/', (req, res) => {
   });
 });
 
+//example Url: http://localhost:9002/theater/showtime/?id10500008=&title_url=black_panther&start_time=1230&week_day=5&seat=standard
+
 app.put('/theater/showtime/', (req, res) => {
   var query = req.query;
   var reRoute = req.route.path;
@@ -71,7 +73,9 @@ app.put('/theater/showtime/', (req, res) => {
   })
 })
 
-app.delete('theater/showtime/:id', (req, res) => {
+
+
+app.delete('/theater/showtime/', (req, res) => {
   var query = req.query;
   var reRoute = req.route.path;
   console.log('reRoute', reRoute); // could use for possible redirect
