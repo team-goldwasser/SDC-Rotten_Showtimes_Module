@@ -135,13 +135,12 @@ module.exports.addShowtimes = (query) => {
     const movie_id = movie.id;
     console.log('this is the movie', movie.title_url)
     console.log('this is the movie', movie.id)
-    const movieId = movie_id;
     Showtime.create({
         week_day: week_day,
         start_time: start_time,
         seat: seat,
         theater_id: id,
-        movie_id: movieId
+        movie_id: movie_id
       })
       .then(showtime => {
         console.log('success creating a showtime', showtime);
@@ -156,23 +155,17 @@ module.exports.addShowtimes = (query) => {
   })
 }
 
-
-
 module.exports.updateShowtime = (query) => {
   var start = now();
   const { id, title_url, week_day, start_time, seat} = query;
 
   Showtime.findOne({ where: { id: id }})
     .then(showtime => {
-      var theater_id = showtime.theater_id;
-      console.log('SHOWTIME', theater_id);
       showtime.update({
         id: id,
         week_day: week_day,
         start_time: start_time,
-        seat: seat,
-        theater_id: theater_id,
-        movie_id: movie_id
+        seat: seat
       }, { fields: ['week_day', 'start_time', 'seat']
     })
       return showtime.save();
@@ -191,6 +184,7 @@ module.exports.updateShowtime = (query) => {
 
 module.exports.deleteShowtime = (query) => {
   var start = now();
+  console.log('this is the showtime id', query.id);
   
   Showtime.findOne({ where: { id: query.id }})
   .then(showtime => {
