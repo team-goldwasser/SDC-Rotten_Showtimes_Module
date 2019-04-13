@@ -1,15 +1,7 @@
-// const sample = {
-//   week_day: 'Friday',
-//   start_time: '19:15',
-//   seat: 'standard',
-//   theater_id: 3,
-//   movie_id: 1
-// }
-
-const days = [0, 1, 2, 3, 4, 5, 6]; 
+const days = [0, 1, 2, 3, 4, 5, 6];
 const seat = ['standard', 'recliner', '3D'];
-const startTime = ['00', '15', '30', '45']; 
-const moviePlayCountPerDay = 6;
+const startTime = ['00', '15', '30', '45'];
+const moviePlayCountPerDay = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 // theater operating hours
 const open = 10;
@@ -18,8 +10,8 @@ const close = 22;
 // db id
 const generateIds = (count) => {
   var result = [];
-  while(count < 5001) {
-  // while (count < 5001) {
+  while (count < 5001) {
+    // while (count < 5001) {
     result.push(count)
     count++;
   }
@@ -34,24 +26,23 @@ const theaterIds = generateIds(1);
 // Black Panther, The Avengers, Inception, Star Wars: The Last Jedi, Incredibles 2
 const movieIds = [284054, 24428, 27205, 181808, 260513, 169917, 102899, 245891, 263115, 297802];
 
-
 const randomIndex = array => Math.floor(Math.random() * array.length);
 
 const generateShowtime = () => {
   const results = [];
 
-  theaterIds.forEach((theaterId) => {
-    movieIds.forEach((movieId) => {
-      days.forEach((day) => {
-        let count = moviePlayCountPerDay;
-        while (count > 0) {
-          const showtime = {};
-          showtime.start_time = `${Math.floor(Math.random() * (close - open) + open)}:${startTime[randomIndex(seat)]}`;
-          showtime.week_day = day;
-          showtime.seat = seat[randomIndex(seat)];
-          showtime.theater_id = theaterId;
+  theaterIds.forEach((theaterId) => { //iterates over each id supplied to this function
+    movieIds.forEach((movieId) => { //loops over each movie in the array
+      days.forEach((day) => {  //loops over day of the week
+        let count = moviePlayCountPerDay[randomIndex(moviePlayCountPerDay)]; //stores a count value that will be the number of showtime string to create per day
+        while (count > 0) {  //as long as that count is greater than zero
+          const showtime = {};  //create an object to store each shwtime
+          showtime.start_time = `${Math.floor(Math.random() * (close - open) + open)}:${startTime[randomIndex(seat)]}`; //it generates a random start time string
+          showtime.week_day = day; //sets the day for showtime to the current day in loop
+          showtime.seat = seat[randomIndex(seat)]; //sets a random set type
+          showtime.theater_id = theaterId; // sets the current theater id 
           // showtime.theater_id = 66;
-          showtime.movie_id = movieId;
+          showtime.movie_id = movieId; // 
           results.push(showtime);
           count--;
         }
