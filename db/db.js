@@ -192,13 +192,6 @@ module.exports.updateShowtime = (query, callback) => {
 }
 
 
-
-
-
-
-
-
-
 module.exports.deleteShowtime = (query, callback) => {
   var start = now();
   console.log('this is the showtime id', query.id);
@@ -209,7 +202,7 @@ module.exports.deleteShowtime = (query, callback) => {
   })
   .then(result => {
     console.log('deleted showtime', result);
-    callback(result);
+    callback(query.id);
   })
   .catch(err => console.log('err trying to delete showtime', err))
   var end = now();
