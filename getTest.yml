@@ -1,56 +1,23 @@
 config:
-  target: 'http://localhost:9002/'
+  target: 'http://localhost:9002/showtime'
   phases:
     - duration: 60
       arrivalRate: 10
-      duration: 100
-      arrivalRate: 10
-      rampTo: 50
-      duration: 180
-      rampTo: 75
-      duration: 100
-      rampTo: 100
+      
   defaults:
     headers:
-  # path is relative to the location of the test script
-  # path: "./db/sample/getMovies.csv"
-  # : 
-  #   - "title_url"
-  #   - "zip"
 scenarios:
   - flow:
       - get:
-          url: "showtime/black_panther/90003"      
-      # - get: 
-      #     url: "/aquaman/92236"
-      # - get:
-      #     url: "/the_avengers/90024"
-      # - get:
-      #     url: "/ant_man/90345"
-      # - get:
-      #     url: "/inception/96723"
-      # - get:
-      #     url: "/incredibles_2/94447"
-    
-      - post:
-          url: "theater/showtime/23256"
-          json:
-            id: "23256"
-            title_url: "the_avengers"
-            start_time: "12:30"
-            week_day: "6"
-            seat: "standard"
-          capture:
-            json: "$.id"
-            
+          url: "/black_panther/90003"
+      - get: 
+          url: "/aquaman/92236"
 
-
-          #   variables:
-#     title_urls:
-#       - ["black_panther", "aquaman", "the_avengers", "inception"]
-# scenarios:
-#   - flow:
-#       - loop:
-#           - get:
-#               url: "showtime/{{ $loopElement }}/90002"
-#         over: title_urls
+      - get:
+          url: "/the_avengers/90024"
+      - get:
+          url: "/ant_man/90345"
+      - get:
+          url: "/inception/96723"
+      - get:
+          url: "/incredibles_2/94447"

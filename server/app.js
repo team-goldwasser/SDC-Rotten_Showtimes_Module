@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -64,7 +65,8 @@ app.post('/theater/showtime/', (req, res) => {
   addShowtimes(query, (newShowtime) => {
     res.status(201).json({
       message: `success adding showtime id#: ${newShowtime}`,
-      id: newShowtime
+      id: newShowtime,
+      theater_id: query.id
     });
   })
 });
@@ -77,10 +79,9 @@ app.put('/theater/showtime/', (req, res) => {
   updateShowtime(query, (updatedShowtime) => {
     res.status(202).json({
       "message": `you have successfully updated showtime id#: ${updatedShowtime}`,
-      "id": updatedShowtime
+      "updatedShowtime": updatedShowtime,
     })
   });
-
 });
 
 //example Url: http://localhost:9002/theater/showtime/?id10500008
