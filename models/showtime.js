@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     start_time: DataTypes.STRING,
     seat: DataTypes.STRING,
     theater_id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       underscorded: true,
       references: {
         model: 'Theater', 
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     movie_id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       underscorded: true,
       references: {
         model: 'Movie',
@@ -32,16 +32,15 @@ module.exports = (sequelize, DataTypes) => {
   showtime.associate = (models) => {
     // associations can be defined here for Theater.hasMany(Showtime) Theater is the source and Showtime is target
     models.showtime.belongsTo(models.movie, {
-      underscorded: true
+      underscorded: true,
+      as: 'movie',
+      foreignKey: 'movie_id'
     });
-    models.movie.hasMany(models.showtime, {
-      foreignKey: 'movie_id',
-      sourceKey: 'id'
-    });
-    models.theater.hasMany(models.showtime, {
-      foreignKey: 'theater_id',
-      sourceKey: 'id'
-    }); 
+    models.showtime.belongsTo(models.theater, {
+      underscorded: true,
+      as: 'theater',
+      foreignKey: 'theater_id'
+    })
   };
   return showtime;
 };

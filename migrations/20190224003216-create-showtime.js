@@ -26,7 +26,7 @@ module.exports = {
         }
       },
       movie_id: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         underscored: true,
         references: {
           model: 'Movie',
@@ -42,6 +42,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+    
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('showtimes');

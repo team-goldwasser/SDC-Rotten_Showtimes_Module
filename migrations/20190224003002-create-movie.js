@@ -4,7 +4,7 @@ module.exports = {
     return queryInterface.createTable('movies', {
       id: {
         primaryKey: true,
-        type: Sequelize.BIGINT
+        type: Sequelize.INTEGER
       },
       title: {
         type: Sequelize.STRING

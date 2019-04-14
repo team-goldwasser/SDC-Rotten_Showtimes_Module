@@ -1,6 +1,6 @@
 <template>
   <div class="location">
-    <div v-if="!isChanging">
+    <div v-if="!isChanging"> 
       Showtimes for
       <strong>today</strong> near
       <strong>{{zip}}</strong>
