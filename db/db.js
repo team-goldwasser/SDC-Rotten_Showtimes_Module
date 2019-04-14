@@ -9,16 +9,47 @@ const Showtime = require('../models/showtime.js')(db, Sequelize);
 const Theater = require('../models/theater.js')(db, Sequelize);
 var now = require('performance-now');
 
-// Showtime.belongsTo(Movie, { constraints: true, onDelete: 'CASCADE', });
-Movie.hasMany(Showtime, {
-  foreignKey: 'movie_id',
-  sourceKey: 'id'
-});
-Theater.hasMany(Showtime, {
-  foreignKey: 'theater_id',
-  sourceKey: 'id'
-});
+  Movie.hasMany(Showtime, {
+    as: 'movie',
+    foreignKey: 'movie_id',
+    sourceKey: 'id',
+    constraints: false
+  })
+    
+  Theater.hasMany(Showtime, {
+    as: 'theater',
+    foreignKey: 'theater_id',
+    sourceKey: 'id',
+    constraints: false
+  });
 
+  // Theater.belongsToMany(Showtime, {
+  //   through: 'Showtime', 
+  //   foreignKey: 'theater_id', 
+  //   sourceKey: 'id',
+  //   constraints: false
+  // });
+
+  // Movie.belongsToMany(Showtime, {
+  //   through: 'Showtime',
+  //   foreignKey: 'movie_id',
+  //   sourceKey: 'id',
+  //   constraints: false
+  // })
+
+  Showtime.belongsTo(Movie, {
+    underscorded: true,
+    foreignKey: 'movie_id',
+    constraints: false
+  });
+  
+  Showtime.belongsTo(Theater, {
+    underscorded: true,
+    foreignKey: 'theater_id',
+    cosntraints: false
+  });
+
+  
 
 // get the closest theater
 // current definition of 'closest': Math.abs(theaterZip - inputZip)
@@ -101,40 +132,18 @@ module.exports.getMovieShowtimes = (titleUrl, theaterId, callback) => {
     });
 };
 
-
-// module.exports.getMovieById = (id, callback) => {
-//   var startTime = now();
-//   const id = req.query.id;
-//   Movie.findOne({
-    
-//   }
-//     .then(movie => {
-//       console.log('you found the movie', movie)
-//     })
-//     .catch((err) => {
-//      console.log(`err in getMovieById: ${err}`);
-//    })
-//    .then((result) => {
-//      var endTime = now();
-//      console.log('***getMovieById query performance time:', endTime - startTime);
-//      callback(result);
-//    })
-// }
+module.exports.get
 
 
-module.exports.addShowtimes = (query) => {
+
+module.exports.addShowtimes = (query, callback) => {
   var start = now();
-
   const { id, title_url, week_day, start_time, seat } = query;
-  console.log('this is the theater id', id);
-
   Movie.findOne({ where: {
         title_url: title_url
       }})
   .then(movie => {
     const movie_id = movie.id;
-    console.log('this is the movie', movie.title_url)
-    console.log('this is the movie', movie.id)
     Showtime.create({
         week_day: week_day,
         start_time: start_time,
@@ -143,7 +152,8 @@ module.exports.addShowtimes = (query) => {
         movie_id: movie_id
       })
       .then(showtime => {
-        console.log('success creating a showtime', showtime);
+        console.log('success creating a showtime', showtime.id);
+        callback(showtime.id)
       })
       .catch(err => {
         console.log('err creating showtime', err);
@@ -155,7 +165,7 @@ module.exports.addShowtimes = (query) => {
   })
 }
 
-module.exports.updateShowtime = (query) => {
+module.exports.updateShowtime = (query, callback) => {
   var start = now();
   const { id, title_url, week_day, start_time, seat} = query;
 
@@ -172,6 +182,7 @@ module.exports.updateShowtime = (query) => {
   })
   .then(result => {
     console.log('updated showtime', result);
+    callback(result)
   })
   .catch(err => {
     console.log('err updating a single showtime', err);
@@ -182,16 +193,23 @@ module.exports.updateShowtime = (query) => {
 
 
 
-module.exports.deleteShowtime = (query) => {
+
+
+
+
+
+
+module.exports.deleteShowtime = (query, callback) => {
   var start = now();
   console.log('this is the showtime id', query.id);
   
   Showtime.findOne({ where: { id: query.id }})
   .then(showtime => {
-    return showtime.destroy({ force: true })
+    return showtime.destroy()
   })
   .then(result => {
     console.log('deleted showtime', result);
+    callback(result);
   })
   .catch(err => console.log('err trying to delete showtime', err))
   var end = now();

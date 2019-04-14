@@ -21,8 +21,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       zip: {
-        type: Sequelize.BIGINT,
-         //might need to create an index here (secondary?)/(unique?) 
+        type: Sequelize.INTEGER,
+        index: true
+        //might need to create an index here (secondary?)/(unique?) 
       },
       phone: {
         type: Sequelize.STRING

@@ -18,5 +18,16 @@
     "define": {
       "timestamps": false
     }
+  },
+  "production": {
+    "username": "eric",
+    "password": "chalon1980",
+    "database": "rottentomatoes",
+    "host": "localhost",
+    "dialect": "postgres",
+    "define": {
+      "timestamps": false
+    }
   }
+
 }
