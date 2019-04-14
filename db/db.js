@@ -195,7 +195,6 @@ module.exports.updateShowtime = (query, callback) => {
 module.exports.deleteShowtime = (query, callback) => {
   var start = now();
   console.log('this is the showtime id', query.id);
-  
   Showtime.findOne({ where: { id: query.id }})
   .then(showtime => {
     return showtime.destroy()
