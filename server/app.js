@@ -1,17 +1,33 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const morgan = require('morgan');
 
-const { getTheater, getMovieShowtimes } = require('../db/db.js');
+
+const { getTheater, getMovieShowtimes, addShowtimes, updateShowtime, deleteShowtime } = require('../db/db.js');
+
 
 const app = express();
 
-app.use('/m/:title_url', express.static(path.join(__dirname, '../dist')));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+app.use('/m/:title_url/:zip', express.static(path.join(__dirname, '../dist')));
+// app.use('/m/:title_url/', express.static(path.join(__dirname, '../dist')));
+
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   next();
+// });
+
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+app.use(bodyParser.json());
+app.use(morgan('dev'));
+app.use(cors());
+
 
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;
@@ -37,5 +53,49 @@ app.get('/showtime/:title_url/:zip', (req, res) => {
     });
   });
 });
+
+
+
+
+//example Url: http://localhost:9002/theater/showtime/?id=23256&title_url=black_panther&start_time=1230&week_day=5&seat=standard
+
+app.post('/theater/showtime/', (req, res) => {
+  var query = req.query;
+  console.log('in the post showtime route', query); 
+  addShowtimes(query, (newShowtime) => {
+    res.status(201).json({
+      message: `success adding showtime id#: ${newShowtime}`,
+      id: newShowtime,
+      theater_id: query.id
+    });
+  })
+});
+
+//example Url: http://localhost:9002/theater/showtime/?id10500008=&title_url=black_panther&start_time=1230&week_day=5&seat=standard
+
+app.put('/theater/showtime/', (req, res) => {
+  var query = req.query;
+  console.log('in the update showtime route', query);
+  updateShowtime(query, (updatedShowtime) => {
+    res.status(202).json({
+      "message": `you have successfully updated showtime id#: ${updatedShowtime}`,
+      "updatedShowtime": updatedShowtime,
+    })
+  });
+});
+
+//example Url: http://localhost:9002/theater/showtime/?id10500008
+
+app.delete('/theater/showtime/', (req, res) => {
+  var query = req.query;
+  console.log('in the post showtime route', query);
+  deleteShowtime(query, (deletedShowtime) => {
+    res.status(203).json({
+      "message": `you successfully deleted showtime id#: ${deletedShowtime}`,
+      "id": deletedShowtime
+    })
+  })
+});
+
 
 module.exports = app;

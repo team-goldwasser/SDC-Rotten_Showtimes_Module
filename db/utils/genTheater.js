@@ -7,9 +7,7 @@
 //   phone: '(415) 369-6207'
 // }
 
-
-const faker = require('faker/locale/en_CA');
-
+const faker = require('faker');
 
 const locationTitles = ['Pictures', 'Shows', 'Cinema', 'Cinemas', 'Studios', 'Theater', 'Theaters', 'Theatre', 'Theatres'];
 const cinemaPrefix = ["AMC", "UA", "Century", "AMC at the", "ArcLight", "Pacific", "NewMark", "Landmark", "Regal"];
@@ -24,6 +22,10 @@ const getRandomIndex = (min, max) => {
 const getRandomZip = (min, max) => {
   return Math.floor((Math.random() * (max - min + 1) + min));
 }
+
+var areaCodes = [209, 213, 279, 310, 323, 341, 408, 415, 424, 442, 510, 530, 559, 562, 619, 626, 628, 650, 657, 661, 669, 707, 714, 747, 760, 805, 818, 820, 831, 858, 909, 916, 925, 949, 951];
+
+
 
 const generateTheaters = (count) => {
   var results = [];

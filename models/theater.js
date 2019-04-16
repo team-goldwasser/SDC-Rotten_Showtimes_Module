@@ -7,9 +7,24 @@ module.exports = (sequelize, DataTypes) => {
     state: DataTypes.STRING,
     zip: DataTypes.INTEGER,
     phone: DataTypes.STRING
-  }, {});
-  theater.associate = function(models) {
-    // associations can be defined here
+  }, {
+    indexes: [
+         {
+           name: 'zip_index',
+           method: 'BTREE',
+           fields: ['zip', {
+             collate: 'en_US',
+             order: 'DESC'
+           }]
+         }
+    ]
+  });
+  theater.associate = (models) => {
+    models.theater.hasMany(models.showtime, {
+      as: 'theater',
+      foreignKey: 'theater_id',
+      sourceKey: 'id',
+   });
   };
   return theater;
 };

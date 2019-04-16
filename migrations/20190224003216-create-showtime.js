@@ -18,10 +18,20 @@ module.exports = {
         type: Sequelize.STRING
       },
       theater_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        underscored: true,
+        references: {
+          model: 'Theater',
+          key: 'ID'
+        }
       },
       movie_id: {
-        type: Sequelize.BIGINT
+        type: Sequelize.INTEGER,
+        underscored: true,
+        references: {
+          model: 'Movie',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +42,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+    
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('showtimes');

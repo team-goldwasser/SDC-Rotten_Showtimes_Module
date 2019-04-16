@@ -1,0 +1,23 @@
+config:
+  target: 'http://localhost:9002/showtime'
+  phases:
+    - duration: 60
+      arrivalRate: 10
+      
+  defaults:
+    headers:
+scenarios:
+  - flow:
+      - get:
+          url: "/black_panther/90003"
+      - get: 
+          url: "/aquaman/92236"
+
+      - get:
+          url: "/the_avengers/90024"
+      - get:
+          url: "/ant_man/90345"
+      - get:
+          url: "/inception/96723"
+      - get:
+          url: "/incredibles_2/94447"

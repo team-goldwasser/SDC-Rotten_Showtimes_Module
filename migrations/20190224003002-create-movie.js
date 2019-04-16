@@ -4,13 +4,14 @@ module.exports = {
     return queryInterface.createTable('movies', {
       id: {
         primaryKey: true,
-        type: Sequelize.BIGINT
+        type: Sequelize.INTEGER
       },
       title: {
         type: Sequelize.STRING
       },
       title_url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       tmdb_poster_path: {
         type: Sequelize.STRING

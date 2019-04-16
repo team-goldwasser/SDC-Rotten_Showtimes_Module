@@ -16,7 +16,7 @@
 </div>
 </template>
 
-<script type='text/javascript'>
+<script type='text/javascript'>  //maps the list of showtimes retrieved from db and formats each time
 export default {
   props: ['title','showtimes', 'vocabs'],
   computed: {

@@ -28,9 +28,13 @@ export default {
   },
   data() {
     return {
-      zip: 94112,
-      title_url: 'black_panther',
+      zip: parseInt(window.location.pathname.split('/')[3]),
+      title_url: window.location.pathname.split('/')[2],
       theater: {},
+      // error: '',
+      // latitude: '',
+      // longitude: '',
+      // location: {},
       threeDTitle: 'DIGITAL 3D SHOWTIMES',
 
       standardTitle: 'STANDARD SHOWTIMES',
@@ -47,8 +51,21 @@ export default {
       }
     }
   },
-  methods:{
+  methods: {
+    // getLocation: function() {
+    //   if(window.navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(this.showPosition)
+    //   } else {
+    //     this.error = "Geolocation is not supported."
+    //   }
+    // },
+    // showPosition: function(position) {
+    //   this.latitude = position.coords.latitude;
+    //   this.longitude = position.coords.longitude;
+    //   console.log('Lat:', this.latitude, 'Long:', this.longitude);
+    // },
     loadInfo(zip) {
+      // getLocation()
       getInfo(zip, (response) => {
         this.zip = zip;
         this.theater = response;
