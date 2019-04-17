@@ -14,7 +14,7 @@ package-lock.json
 *.sln
 */config.json
 
-apiKeys.js
-
 
 config/config.json
+
+ec2connectCommands_README.md

@@ -8,5 +8,5 @@ before_script:
 script: gulp minify-css
 before_install:
   - ""
-env:
+env: 
   -
