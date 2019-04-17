@@ -17,3 +17,4 @@ package-lock.json
 apiKeys.js
 
 
+config/config.json
