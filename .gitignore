@@ -12,8 +12,9 @@ package-lock.json
 *.ntvs*
 *.njsproj
 *.sln
+*/config.json
 
 
-apiKeys.js
+config/config.json
 
-/config
+ec2connectCommands_README.md

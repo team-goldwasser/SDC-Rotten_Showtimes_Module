@@ -7,7 +7,7 @@ Install PostgreSQL:
 - Start a PSQL server
   $ psql -U username -p
 
-- Log in to user, either `postgres` for or create own user
+- Log in to user, either `postgres` or create own user
 
 ## Create database `rottentomatoes`:
 

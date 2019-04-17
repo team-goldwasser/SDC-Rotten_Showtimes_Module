@@ -1,5 +1,7 @@
 /*database: rottentomatoes*/
 
+IF NOT EXISTS CREATE DATABASE rottentomatoes;
+
 
 CREATE TABLE theaters(
   ID SERIAL PRIMARY KEY,
@@ -10,7 +12,6 @@ CREATE TABLE theaters(
   zip integer,
   phone varchar(20)
 );
-
 
 CREATE TABLE movies(
   id integer NOT NULL UNIQUE PRIMARY KEY,
@@ -31,9 +32,9 @@ CREATE TABLE showtimes(
 );
 
 
-COPY movies FROM '/Users/macbook/Documents/HRPT11/SDC-Rotten_Showtimes_Module/db/sample/movies.csv'
-DELIMITER ','
-CSV HEADER;
+-- COPY movies FROM '/home/ec2-user/SDC-Rotten_Showtimes_Module/db/sample/movies.csv'
+-- DELIMITER ','
+-- CSV HEADER;
 
   
 
