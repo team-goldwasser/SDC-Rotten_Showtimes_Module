@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "eric",
-    "password": "chalon1980",
+    "username": "postgres",
+    "password": "",
     "database": "rottentomatoes",
     "host": "localhost",
     "dialect": "postgres",
@@ -10,8 +10,8 @@
     }
   },
   "test": {
-    "username": "eric",
-    "password": "chalon1980",
+    "username": "postgres",
+    "password": "",
     "database": "rottentomatoes",
     "host": "localhost",
     "dialect": "postgres",
@@ -20,8 +20,8 @@
     }
   },
   "production": {
-    "username": "eric",
-    "password": "chalon1980",
+    "username": "postgres",
+    "password": "",
     "database": "rottentomatoes",
     "host": "localhost",
     "dialect": "postgres",
