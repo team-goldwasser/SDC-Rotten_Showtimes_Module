@@ -1,4 +1,4 @@
-import { addShowtimes } from "../db";
+
 
 
 //query for getting one theater where zip = 
