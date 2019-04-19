@@ -32,9 +32,9 @@ CREATE TABLE showtimes(
 );
 
 
--- COPY movies FROM '/home/ec2-user/SDC-Rotten_Showtimes_Module/db/sample/movies.csv'
--- DELIMITER ','
--- CSV HEADER;
+COPY movies FROM '/home/ec2-user/SDC-Rotten_Showtimes_Module/db/sample/movies.csv'
+DELIMITER ','
+CSV HEADER;
 
   
 
