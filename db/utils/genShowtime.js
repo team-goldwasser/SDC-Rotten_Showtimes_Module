@@ -1,7 +1,7 @@
 const days = [0, 1, 2, 3, 4, 5, 6];
 const seat = ['standard', 'recliner', '3D'];
 const startTime = ['00', '15', '30', '45'];
-const moviePlayCountPerDay = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const moviePlayCountPerDay = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // theater operating hours
 const open = 10;
@@ -10,7 +10,9 @@ const close = 22;
 // db id
 const generateIds = (count) => {
   var result = [];
-  while (count < 5001) {
+  var newMaxCount = count + 500;
+
+  while (count < newMaxCount) {
     // while (count < 5001) {
     result.push(count)
     count++;
@@ -18,7 +20,7 @@ const generateIds = (count) => {
   return result;
 }
 // const theaterIds = [1,2,3,4,5];
-const theaterIds = generateIds(1);
+// const theaterIds = generateIds(1);
 //could do a selectAll query to return all ids from theaters
 
 // console.log(theaterIds[theaterIds.length - 1]);
@@ -28,8 +30,10 @@ const movieIds = [284054, 24428, 27205, 181808, 260513, 169917, 102899, 245891, 
 
 const randomIndex = array => Math.floor(Math.random() * array.length);
 
-const generateShowtime = () => {
+const generateShowtime = (count) => {
   const results = [];
+
+  var theaterIds = generateIds(count);
 
   theaterIds.forEach((theaterId) => { //iterates over each id supplied to this function
     movieIds.forEach((movieId) => { //loops over each movie in the array

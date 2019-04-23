@@ -1,7 +1,7 @@
 let generateShowtime = require('../db/utils/genShowtime.js');
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => await queryInterface.bulkInsert('showtimes', generateShowtime(), {
+  up: async (queryInterface, Sequelize) => await queryInterface.bulkInsert('showtimes', generateShowtime(1500), {
     underscored: true
   }),
 
