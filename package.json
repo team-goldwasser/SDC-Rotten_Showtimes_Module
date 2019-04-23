@@ -11,7 +11,8 @@
     "build": "cross-env NODE_ENV=production webpack -d --watch --progress --hide-modules",
     "test": "jest",
     "seed-all": "node_modules/.bin/sequelize db:seed:all --debug",
-    "seed": "node ./db/mongodb/mongoSeeders/mgdb_seed.js"
+    "seed": "node ./db/mongodb/mongoSeeders/mgdb_seed.js",
+    "seed-gen": "node_modules/.bin/sequelize seed:generate --name showtimesInsert"
   },
   "dependencies": {
     "@vue/test-utils": "^1.0.0-beta.29",

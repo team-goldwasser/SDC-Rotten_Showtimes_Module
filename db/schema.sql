@@ -2,6 +2,11 @@
 
 IF NOT EXISTS CREATE DATABASE rottentomatoes;
 
+DROP TABLE showtimes;
+DROP TYPE seat;
+DROP TABLE theaters;
+DROP TABLE movies;
+
 
 CREATE TABLE theaters(
   ID SERIAL PRIMARY KEY,
@@ -32,11 +37,13 @@ CREATE TABLE showtimes(
 );
 
 
-COPY movies FROM '/home/ec2-user/SDC-Rotten_Showtimes_Module/db/sample/movies.csv'
+-- COPY movies FROM '/home/ec2-user/SDC-Rotten_Showtimes_Module/db/sample/movies.csv'
+-- DELIMITER ','
+-- CSV HEADER;
+
+COPY movies FROM '/Users/macbook/Documents/HRPT11/SDC-Rotten_Showtimes_Module/db/sample/movies.csv'
 DELIMITER ','
 CSV HEADER;
-
-  
 
 
 -- ALTER TABLE theaters ADD UNIQUE (name);
