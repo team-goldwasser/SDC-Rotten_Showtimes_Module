@@ -41,9 +41,9 @@ CREATE TABLE showtimes(
 -- DELIMITER ','
 -- CSV HEADER;
 
-COPY movies FROM '/Users/macbook/Documents/HRPT11/SDC-Rotten_Showtimes_Module/db/sample/movies.csv'
-DELIMITER ','
-CSV HEADER;
+-- COPY movies FROM '/Users/macbook/Documents/HRPT11/SDC-Rotten_Showtimes_Module/db/sample/movies.csv'
+-- DELIMITER ','
+-- CSV HEADER;
 
 
 -- ALTER TABLE theaters ADD UNIQUE (name);
