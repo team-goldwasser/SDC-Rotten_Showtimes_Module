@@ -1,4 +1,6 @@
 require('newrelic');
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -27,6 +29,17 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cors());
+
+
+app.get('/:file.txt', (req, res, next) => {
+  res.sendFile(`${req.params.file}.txt`, { root: __dirname }, (err) => {
+    if(err) {
+      next(err);
+    } else {
+      console.log('file sent')
+    }
+  })
+});
 
 
 app.get('/showtime/:title_url/:zip', (req, res) => {

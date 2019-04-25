@@ -15,8 +15,8 @@ package-lock.json
 */config.json
 
 
-config/config.json
+/config/config.json
 
-ec2connectCommands_README.md
+/ec2connectCommands_README.md
 
-loaderio-70278e261a57e7a437a9de2482b57576.txt
+server/loaderio-70278e261a57e7a437a9de2482b57576.txt
