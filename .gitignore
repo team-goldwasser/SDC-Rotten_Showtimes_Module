@@ -15,8 +15,10 @@ config/config.json
 *.njsproj
 *.sln
 */config.json
+*.log
 
 /ec2connectCommands_README.md
 
-server/loaderio-70278e261a57e7a437a9de2482b57576.txt
+/server/loaderio-70278e261a57e7a437a9de2482b57576.txt
 
+.dotenv

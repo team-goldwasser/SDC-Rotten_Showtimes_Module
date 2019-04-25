@@ -17,8 +17,8 @@ if (config.use_env_variable) {
 
 //establish a connection to the database with env variables and the cofig, and gather the model files
 //from the current directory and add them to the db object
-
-fs.readdirSync(__dirname)
+fs
+  .readdirSync(__dirname)
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
