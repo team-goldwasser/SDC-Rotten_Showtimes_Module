@@ -132,9 +132,6 @@ module.exports.getMovieShowtimes = (titleUrl, theaterId, callback) => {
     });
 };
 
-module.exports.get
-
-
 
 module.exports.addShowtimes = (query, callback) => {
   var start = now();
