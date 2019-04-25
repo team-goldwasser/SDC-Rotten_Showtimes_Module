@@ -2,9 +2,11 @@
 node_modules/
 npm-debug.log
 yarn-error.log
+newrelic_agent.log
 package-lock.json
 .eslintrc.js
 /coverage
+/config
 
 # Editor directories and files
 .idea
@@ -14,9 +16,7 @@ package-lock.json
 *.sln
 */config.json
 
-
-/config/config.json
-
 /ec2connectCommands_README.md
 
 server/loaderio-70278e261a57e7a437a9de2482b57576.txt
+
