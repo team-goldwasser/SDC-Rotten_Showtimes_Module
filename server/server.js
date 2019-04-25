@@ -1,3 +1,4 @@
+require('newrelic');
 const app = require('./app.js');
 
 const PORT = 9002 || process.env.PORT;
