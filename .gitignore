@@ -19,6 +19,10 @@ config/config.json
 
 /ec2connectCommands_README.md
 
-/server/loaderio-70278e261a57e7a437a9de2482b57576.txt
+/server/loaderio-d839c2957bdb48d862ee1b9ceb3a70ea.txt
+/server/getPayload.json
 
 .dotenv
+.sequelizerc
+
+newrelic_agent.log

@@ -5,6 +5,7 @@ Install PostgreSQL:
 - https://www.postgresql.org/download/macosx/
 
 - Start a PSQL server
+brew service postgresql start
   $ psql -U username -p
 
 - Log in to user, either `postgres` or create own user

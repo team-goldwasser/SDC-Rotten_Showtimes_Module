@@ -1,8 +1,10 @@
 config:
   target: 'http://localhost:9002/showtime'
   phases:
-    - duration: 60
-      arrivalRate: 10
+    - duration: 600
+      arrivalRate: 100
+      rampTo: 700
+
       
   defaults:
     headers:
@@ -12,12 +14,47 @@ scenarios:
           url: "/black_panther/90003"
       - get: 
           url: "/aquaman/92236"
-
       - get:
           url: "/the_avengers/90024"
       - get:
           url: "/ant_man/90345"
       - get:
-          url: "/inception/96723"
+          url: "/inception/96123"
       - get:
-          url: "/incredibles_2/94447"
+          url: "/incredibles_2/94433"
+      - get:
+          url: "/black_panther/96153"
+      - get: 
+          url: "/aquaman/92336"
+      - get:
+          url: "/the_avengers/94024"
+      - get:
+          url: "/ant_man/93345"
+      - get:
+          url: "/inception/96000"
+      - get:
+          url: "/incredibles_2/90001"
+        - get:
+          url: "/black_panther/90003"
+      - get: 
+          url: "/aquaman/92236"
+      - get:
+          url: "/the_avengers/90022"
+      - get:
+          url: "/ant_man/90345"
+      - get:
+          url: "/inception/94123"
+      - get:
+          url: "/incredibles_2/91133"
+      - get:
+          url: "/black_panther/93353"
+      - get: 
+          url: "/aquaman/90036"
+      - get:
+          url: "/the_avengers/92024"
+      - get:
+          url: "/ant_man/95545"
+      - get:
+          url: "/inception/96001"
+      - get:
+          url: "/incredibles_2/90003"
