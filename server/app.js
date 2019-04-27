@@ -30,6 +30,17 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cors());
 
+app.get('/:file', (req, res, next) => {
+  var file = req.params.file;
+  console.log('this is the loadio file', file);
+  res.sendFile(file, {root: __dirname}, (err) => {
+    if(err) {
+      next(err);
+    } else {
+      console.log('loaderio verification sent');
+    }
+  });
+});
 
 app.get('/:file.txt', (req, res, next) => {
   res.sendFile(`${req.params.file}.txt`, { root: __dirname }, (err) => {

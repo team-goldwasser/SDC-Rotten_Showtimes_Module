@@ -32,8 +32,8 @@ const getInfo = (zip, callback) => {
   // console.log('inside getInfo B:', zip);
 
   $.ajax({
-      url: `http://ec2-35-164-241-88.us-west-2.compute.amazonaws.com:80/showtime/${titleUrl}/${zip}`,
-      // url: `http://localhost:9002/showtime/${titleUrl}/${zip}`,
+      url: `http://35.164.241.88:9002/showtime/${titleUrl}/${zip}`,
+     // url: `http://localhost:9002/showtime/${titleUrl}/${zip}`,
       type: 'GET',
       contentType: 'application/json',
     })

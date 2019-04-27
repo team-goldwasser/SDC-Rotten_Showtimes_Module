@@ -15,6 +15,7 @@ config/config.json
 *.njsproj
 *.sln
 */config.json
+*.log
 
 /ec2connectCommands_README.md
 
