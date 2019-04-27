@@ -22,3 +22,6 @@ config/config.json
 /server/loaderio-70278e261a57e7a437a9de2482b57576.txt
 
 .env
+
+newrelic_agent.log
+newrelic.js
