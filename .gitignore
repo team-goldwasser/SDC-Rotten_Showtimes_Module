@@ -13,8 +13,17 @@ package-lock.json
 *.njsproj
 *.sln
 */config.json
+*.log
 
+config/config.js
 
-config/config.json
 
 ec2connectCommands_README.md
+newrelic_agent.log
+newrelic.js
+
+/server/loaderio-d839c2957bdb48d862ee1b9ceb3a70ea.txt
+
+.env
+
+

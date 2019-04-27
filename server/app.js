@@ -1,4 +1,5 @@
 require('newrelic');
+require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -28,6 +29,17 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cors());
 
+app.get('/:file', (req, res, next) => {
+  var file = req.params.file;
+  console.log('this is the loadio file', file);
+  res.sendFile(file, {root: __dirname}, (err) => {
+    if(err) {
+      next(err);
+    } else {
+      console.log('loaderio verification sent');
+    }
+  });
+});
 
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;

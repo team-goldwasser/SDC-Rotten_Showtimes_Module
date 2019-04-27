@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node ./server/server.js --debug",
+    "start": "NODE_ENV=production node ./server/server.js --debug",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack -d --watch --progress --hide-modules",
     "test": "jest",
