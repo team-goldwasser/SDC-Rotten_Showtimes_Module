@@ -67,9 +67,6 @@ app.get('/showtime/:title_url/:zip', (req, res) => {
   });
 });
 
-
-
-
 //example Url: http://localhost:9002/theater/showtime/?id=23256&title_url=black_panther&start_time=1230&week_day=5&seat=standard
 
 app.post('/theater/showtime/', (req, res) => {

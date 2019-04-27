@@ -1,9 +1,9 @@
 config:
   target: 'http://localhost:9002/showtime'
   phases:
-    - duration: 600
+    - duration: 120
       arrivalRate: 100
-      rampTo: 700
+      rampTo: 1000
 
       
   defaults:
@@ -34,7 +34,7 @@ scenarios:
           url: "/inception/96000"
       - get:
           url: "/incredibles_2/90001"
-        - get:
+      - get:
           url: "/black_panther/90003"
       - get: 
           url: "/aquaman/92236"

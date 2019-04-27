@@ -2,7 +2,7 @@ config:
   target: 'http://localhost:9002/'
   phases:
     - duration: 60
-      arrivalRate: 1
+      arrivalRate: 
   defaults:
     headers:
 scenarios:
@@ -63,21 +63,21 @@ scenarios:
       - delete:
           url: "/showtime/{{id}}"
       
-      - post:
-          url: "/showtime"
-          json:
-            id: "56"
-            title_url: "aquaman"
-            start_time: "11:55"
-            week_day: "2"
-            seat: "recliner"
-          capture:
-            json: "$.id"
-            as: "id"
-      - put:
-          url: "/showtime/{{id}}"
-          json: 
-            start_time: "11:45"
-            seat: "3D"
-      - delete:
-          url: "/showtime/{{id}}"
+      # - post:
+      #     url: "/showtime"
+      #     json:
+      #       id: "56"
+      #       title_url: "aquaman"
+      #       start_time: "11:55"
+      #       week_day: "2"
+      #       seat: "recliner"
+      #     capture:
+      #       json: "$.id"
+      #       as: "id"
+      # - put:
+      #     url: "/showtime/{{id}}"
+      #     json: 
+      #       start_time: "11:45"
+      #       seat: "3D"
+      # - delete:
+      #     url: "/showtime/{{id}}"
