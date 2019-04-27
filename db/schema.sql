@@ -1,4 +1,3 @@
-
 /*database: rottentomatoes*/
 
 IF NOT EXISTS CREATE DATABASE rottentomatoes;
