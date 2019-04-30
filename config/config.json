@@ -3,7 +3,11 @@
     "username": "eric",
     "password": "chalon",
     "database": "rottentomatoes",
+<<<<<<< HEAD
     "host": "http://ec2-18-237-97-48.us-west-2.compute.amazonaws.com:5432",
+=======
+    "host": "ec2-18-237-97-48.us-west-2.compute.amazonaws.com",
+>>>>>>> added loader.io verification file
     "dialect": "postgres",
     "define": {
       "timestamps": false
@@ -13,7 +17,11 @@
     "username": "eric",
     "password": "chalon",
     "database": "rottentomatoes",
+<<<<<<< HEAD
     "host": "http://ec2-18-237-97-48.us-west-2.compute.amazonaws.com:5432",
+=======
+    "host": "ec2-18-237-97-48.us-west-2.compute.amazonaws.com",
+>>>>>>> added loader.io verification file
     "dialect": "postgres",
     "define": {
       "timestamps": false
@@ -23,7 +31,11 @@
     "username": "eric",
     "password": "chalon",
     "database": "rottentomatoes",
+<<<<<<< HEAD
     "host": "http://ec2-18-237-97-48.us-west-2.compute.amazonaws.com:5432",
+=======
+    "host": "ec2-18-237-97-48.us-west-2.compute.amazonaws.com",
+>>>>>>> added loader.io verification file
     "dialect": "postgres",
     "define": {
       "timestamps": false
