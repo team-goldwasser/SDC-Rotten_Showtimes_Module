@@ -21,3 +21,10 @@ config/config.json
 
 server/loaderio-70278e261a57e7a437a9de2482b57576.txt
 
+ec2connectCommands_README.md
+newrelic_agent.log
+newrelic.js
+
+/server/loaderio-d839c2957bdb48d862ee1b9ceb3a70ea.txt
+
+.env

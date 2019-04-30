@@ -30,8 +30,22 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cors());
 
+app.get('/m/health/', (req, res, next) => {
+  // var baseUrl = req.baseUrl;
+  // var requestIp = req.ip;
+  var host = req.hostname;
+  var origUrl = req.originalUrl;
+  // console.log(`this is baseurl ${baseUrl}:, ${requestUrl}, this is the ip: ${requestIp}`);
+  console.log(`this is the host: ${host} and this is the origUrl: ${origUrl}`);
+  res.setStatus(200).send('healthy');
+})
+
+
+
+
 app.get('/:file', (req, res, next) => {
   var file = req.params.file;
+
   console.log('this is the loadio file', file);
   res.sendFile(file, {root: __dirname}, (err) => {
     if(err) {
