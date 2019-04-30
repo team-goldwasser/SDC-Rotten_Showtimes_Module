@@ -29,6 +29,16 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cors());
 
+app.use('/m/health/', (req, res, next) => {
+  var host = req.hostname;
+  var origUrl = req.originalUrl	;
+  res.status(200).send('healthy'); 
+})
+
+
+
+
+
 app.get('/:file', (req, res, next) => {
   var file = req.params.file;
   console.log('this is the loadio file', file);
