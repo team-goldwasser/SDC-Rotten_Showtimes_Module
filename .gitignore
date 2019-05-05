@@ -28,3 +28,4 @@ newrelic.js
 /server/loaderio-d839c2957bdb48d862ee1b9ceb3a70ea.txt
 
 .env
+.sequelizerc
