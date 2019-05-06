@@ -29,6 +29,19 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cors());
 
+
+app.use('/m/health/', (req, res, next) => {
+ console.log('inside this aws request health handler');
+ var host = req.hostname;
+ var origUrl = req.originalUrl;
+  //         // console.log(`this is baseurl ${baseUrl}:, ${requestUrl}, this is the ip: ${requestIp}`);
+   console.log(`this is the host: ${host} and this is the origUrl: ${origUrl}`);
+   res.status(200).send('healthy');
+ })
+
+
+
+
 app.get('/:file', (req, res, next) => {
   var file = req.params.file;
   console.log('this is the loadio file', file);
@@ -40,7 +53,6 @@ app.get('/:file', (req, res, next) => {
     }
   });
 });
-
 app.get('/showtime/:title_url/:zip', (req, res) => {
   const titleUrl = req.params.title_url;
   console.log(`in get /showtime/:title_url/:zip ${titleUrl}`);
