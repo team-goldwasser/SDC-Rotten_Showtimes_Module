@@ -34,7 +34,7 @@ export default {
       // error: '',
       // latitude: '',
       // longitude: '',
-      // location: {},
+      // location: ,
       threeDTitle: 'DIGITAL 3D SHOWTIMES',
 
       standardTitle: 'STANDARD SHOWTIMES',

@@ -1,9 +1,6 @@
+require('dotenv').config();
 const db = require('../models/index.js').sequelize;
-
-const {
-  Sequelize
-} = db;
-
+const { Sequelize } = db;
 const Movie = require('../models/movie.js')(db, Sequelize);
 const Showtime = require('../models/showtime.js')(db, Sequelize);
 const Theater = require('../models/theater.js')(db, Sequelize);
@@ -23,20 +20,6 @@ var now = require('performance-now');
     constraints: false
   });
 
-  // Theater.belongsToMany(Showtime, {
-  //   through: 'Showtime', 
-  //   foreignKey: 'theater_id', 
-  //   sourceKey: 'id',
-  //   constraints: false
-  // });
-
-  // Movie.belongsToMany(Showtime, {
-  //   through: 'Showtime',
-  //   foreignKey: 'movie_id',
-  //   sourceKey: 'id',
-  //   constraints: false
-  // })
-
   Showtime.belongsTo(Movie, {
     underscorded: true,
     foreignKey: 'movie_id',
@@ -49,7 +32,10 @@ var now = require('performance-now');
     cosntraints: false
   });
 
-  
+/* set up redis */
+const { client } = require('../server/redisCache');
+const Redis = require('ioredis');
+const redis = new Redis(process.env.REDIS_EC2HOST);
 
 // get the closest theater
 // current definition of 'closest': Math.abs(theaterZip - inputZip)
@@ -131,8 +117,6 @@ module.exports.getMovieShowtimes = (titleUrl, theaterId, callback) => {
         });
     });
 };
-
-module.exports.get
 
 
 

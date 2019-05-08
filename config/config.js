@@ -1,5 +1,4 @@
 
-
 require('dotenv').config();
 
 const fs = require('fs');
@@ -30,6 +29,7 @@ module.exports = {
     password: process.env.PGDB_PASSWORD,
     database: "rottentomatoes",
     host: "ec2-35-167-61-182.us-west-2.compute.amazonaws.com",
+    // host: "localhost",
     dialect: "postgres",
     define: {
       timestamps: false

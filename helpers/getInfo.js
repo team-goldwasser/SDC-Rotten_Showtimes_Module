@@ -1,39 +1,15 @@
 import $ from 'jquery';
 
-// const getLocation = (callback) => {
-//   let longitude = "";
-//   let latitude = "";
-//   let data;
-//   window.navigator.geolocation.getCurrentPosition(
-//     position => {
-//       latitude = position.coords.latitude;
-//       longitude = position.coords.longitude;
-//     },
-//     error => {
-//       console.log('error using the geolocation', error)
-//     }
-//   )
-// }
-
 const getInfo = (zip, callback) => {
   // sample url: "some-host/m/black_panther"
   console.log('this is the given zip:', zip);
-  let pathname = window.location.pathname.split('/');
-
-  console.log('this will be title_url:', pathname[2]);
-  console.log('this will be the zip:', pathname[3]);
-  // zip = parseInt(pathname[3], 10);
-  zip = parseInt(pathname[3]);
-  
+  let pathname = window.location.pathname.split('/');  
   let titleUrl = pathname[2];
   console.log('this is the titleUrl:', titleUrl);
-  // zip = zipcode;
-  // console.log('inside getInfo A:', titleUrl)
-  // console.log('inside getInfo B:', zip);
 
   $.ajax({
      // url: `http://35.164.241.88:9002/showtime/${titleUrl}/${zip}`,
-     // url: `http://localhost:9002/showtime/${titleUrl}/${zip}`,
+      // url: `http://localhost:9002/showtime/${titleUrl}/${zip}`,
       url: `http://35.164.241.88:80/showtime/${titleUrl}/${zip}`,
       type: 'GET',
       contentType: 'application/json',
