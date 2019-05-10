@@ -3,8 +3,8 @@ require('dotenv').config();
 var redis = require('redis');
 var client = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_EC2HOST);
 
-const Redis = require('ioredis');
-const redis = new Redis(process.env.REDIS_EC2HOST);
+// const Redis = require('ioredis');
+// const redis = new Redis(process.env.REDIS_EC2HOST);
 
 
 client.on('connect', function() {

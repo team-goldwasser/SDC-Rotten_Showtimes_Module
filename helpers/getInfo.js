@@ -101,3 +101,4 @@ const getInfo = (zip, callback) => {
 };
 
 export default getInfo;
+

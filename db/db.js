@@ -32,11 +32,6 @@ var now = require('performance-now');
     cosntraints: false
   });
 
-/* set up redis */
-const { client } = require('../server/redisCache');
-const Redis = require('ioredis');
-const redis = new Redis(process.env.REDIS_EC2HOST);
-
 // get the closest theater
 // current definition of 'closest': Math.abs(theaterZip - inputZip)
 // reference of sequelize.fn('abs') https://github.com/sequelize/sequelize/issues/2657
